@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:#F6F8FC;color:#111827;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  ::selection{background:#212177;color:#fff}
+  @keyframes adfade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){*{animation:none !important}}
+  @media (max-width:1024px){
+    [data-desk]{display:none !important}
+    [data-mob]{display:flex !important}
+    [data-hero]{grid-template-columns:1fr !important;gap:38px !important}
+    [data-trust]{grid-template-columns:repeat(2,1fr) !important;row-gap:26px !important}
+    [data-platform]{grid-template-columns:repeat(2,1fr) !important}
+    [data-integ]{grid-template-columns:repeat(2,1fr) !important}
+    [data-ai],[data-journey],[data-ba],[data-teamview],[data-sec],[data-evid],[data-pricing],[data-demoform]{grid-template-columns:1fr !important}
+    [data-mig]{grid-template-columns:repeat(2,1fr) !important}
+    [data-foot]{grid-template-columns:1fr 1fr !important}
+  }
+  @media (max-width:640px){
+    [data-trust]{grid-template-columns:repeat(2,1fr) !important}
+    [data-platform],[data-integ],[data-mig],[data-foot]{grid-template-columns:1fr !important}
+    [data-footbot]{flex-direction:column;align-items:flex-start}
+    #top h1{font-size:36px !important;line-height:42px !important}
+    section h2{font-size:30px !important;line-height:38px !important}
+    #demo h2{font-size:32px !important;line-height:40px !important}
+  }
+</style>
+</helmet>
+
+<template id="__bundler_thumbnail" data-bg-color="#0B1230">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0B1230"></rect>
+    <text x="430" y="430" font-family="Manrope, Arial, sans-serif" font-weight="800" font-size="150" fill="#CB0000">ad</text>
+    <text x="600" y="430" font-family="Manrope, Arial, sans-serif" font-weight="800" font-size="150" fill="#ffffff">MYTT</text>
+    <rect x="800" y="300" width="20" height="140" rx="2" fill="#CB0000"></rect>
+    <rect x="832" y="340" width="15" height="100" rx="2" fill="#5b63c4"></rect>
+    <rect x="859" y="375" width="11" height="65" rx="2" fill="#CB0000"></rect>
+  </svg>
+</template>
+
+<div style="position:relative;background:#F6F8FC;min-height:100vh">
+
+  <!-- ============ HEADER ============ -->
+  <header style="position:sticky;top:0;z-index:60;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border-bottom:1px solid #E4EAF3">
+    <div style="max-width:1240px;margin:0 auto;padding:0 28px;height:70px;display:flex;align-items:center;gap:32px">
+      <a href="#top" ref="{{ logoRef }}" style="display:flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0">
+        <img src="logo-wordmark.png" alt="adMYTT" data-word="1" style="height:26px;display:block;will-change:transform">
+        <span style="display:flex;align-items:flex-end;gap:3px;height:24px">
+          <span data-bar="1" style="width:5px;height:24px;background:#CB0000;border-radius:1px;will-change:transform"></span>
+          <span data-bar="1" style="width:4px;height:16px;background:#212177;border-radius:1px;will-change:transform"></span>
+          <span data-bar="1" style="width:3px;height:10px;background:#CB0000;border-radius:1px;will-change:transform"></span>
+        </span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:26px;margin-left:8px" data-desk="1">
+        <a href="#platform" style="font:600 14.5px Inter;color:#334155;text-decoration:none" style-hover="color:#2453D4">Product</a>
+        <a href="#teams" style="font:600 14.5px Inter;color:#334155;text-decoration:none" style-hover="color:#2453D4">Solutions</a>
+        <a href="#ai" style="font:600 14.5px Inter;color:#334155;text-decoration:none" style-hover="color:#2453D4">AI</a>
+        <a href="#security" style="font:600 14.5px Inter;color:#334155;text-decoration:none" style-hover="color:#2453D4">Security</a>
+        <a href="#pricing" style="font:600 14.5px Inter;color:#334155;text-decoration:none" style-hover="color:#2453D4">Pricing</a>
+        <a href="#faq" style="font:600 14.5px Inter;color:#334155;text-decoration:none" style-hover="color:#2453D4">Resources</a>
+      </nav>
+      <div style="margin-left:auto;display:flex;align-items:center;gap:16px" data-desk="1">
+        <a href="https://app.admytt.com" style="font:600 14.5px Inter;color:#0B1230;text-decoration:none">Log in</a>
+        <a href="#demo" style="font:700 14.5px Inter;color:#fff;text-decoration:none;background:#2453D4;padding:11px 20px;border-radius:8px;box-shadow:0 6px 16px rgba(36,83,212,.28)" style-hover="background:#1c44b8">Book a demo</a>
+      </div>
+      <button aria-label="Open menu" onClick="{{ toggleMenu }}" style="margin-left:auto;display:none;background:#fff;border:1px solid #DCE3EE;border-radius:8px;width:42px;height:42px;align-items:center;justify-content:center;cursor:pointer" data-mob="1">
+        <span style="display:block;width:18px;height:2px;background:#0B1230;box-shadow:0 -6px 0 #0B1230,0 6px 0 #0B1230"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- mobile menu -->
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:70;background:rgba(11,18,48,.4)" onClick="{{ closeMenu }}">
+      <div style="position:absolute;top:0;right:0;width:min(86vw,340px);height:100%;background:#fff;padding:24px;display:flex;flex-direction:column;gap:6px;box-shadow:-12px 0 40px rgba(11,18,48,.2)">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
+          <img src="logo-wordmark.png" alt="adMYTT" style="height:24px">
+          <button aria-label="Close menu" onClick="{{ closeMenu }}" style="background:#F1F5FB;border:none;width:38px;height:38px;border-radius:8px;font-size:20px;color:#0B1230;cursor:pointer">×</button>
+        </div>
+        <a href="#platform" onClick="{{ closeMenu }}" style="font:600 16px Inter;color:#0B1230;text-decoration:none;padding:13px 8px;border-bottom:1px solid #EEF2F8">Product</a>
+        <a href="#teams" onClick="{{ closeMenu }}" style="font:600 16px Inter;color:#0B1230;text-decoration:none;padding:13px 8px;border-bottom:1px solid #EEF2F8">Solutions</a>
+        <a href="#ai" onClick="{{ closeMenu }}" style="font:600 16px Inter;color:#0B1230;text-decoration:none;padding:13px 8px;border-bottom:1px solid #EEF2F8">AI</a>
+        <a href="#security" onClick="{{ closeMenu }}" style="font:600 16px Inter;color:#0B1230;text-decoration:none;padding:13px 8px;border-bottom:1px solid #EEF2F8">Security</a>
+        <a href="#pricing" onClick="{{ closeMenu }}" style="font:600 16px Inter;color:#0B1230;text-decoration:none;padding:13px 8px;border-bottom:1px solid #EEF2F8">Pricing</a>
+        <a href="#faq" onClick="{{ closeMenu }}" style="font:600 16px Inter;color:#0B1230;text-decoration:none;padding:13px 8px;border-bottom:1px solid #EEF2F8">Resources</a>
+        <a href="#demo" onClick="{{ closeMenu }}" style="margin-top:18px;font:600 15px Inter;color:#fff;text-decoration:none;background:#2453D4;padding:14px;border-radius:8px;text-align:center">Book a demo</a>
+        <a href="#platform" onClick="{{ closeMenu }}" style="font:600 15px Inter;color:#0B1230;text-decoration:none;border:1px solid #DCE3EE;padding:14px;border-radius:8px;text-align:center">See the product</a>
+        <a href="https://app.admytt.com" style="font:600 15px Inter;color:#64748B;text-decoration:none;padding:12px;text-align:center">Log in</a>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ============ HERO ============ -->
+  <section id="top" style="position:relative;overflow:hidden;background:radial-gradient(120% 120% at 80% -10%,#F0F4FE 0%,#F6F8FC 55%)">
+    <div style="max-width:1240px;margin:0 auto;padding:64px 28px 0">
+      <div style="display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center" data-hero="1">
+        <div style="opacity:1">
+          <div style="display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid #E1E8F4;border-radius:999px;padding:6px 13px 6px 8px;font:600 12.5px Inter;color:#334155;margin-bottom:24px">
+            <span style="background:#EAF0FF;color:#2453D4;border-radius:999px;padding:2px 8px;font:700 11px Inter">CRM</span>
+            Built for education consultancies, not adapted for them
+          </div>
+          <h1 style="font:800 53px/60px Manrope;letter-spacing:-.02em;color:#0B1230;margin-bottom:20px">Run your education consultancy from first enquiry to visa outcome.</h1>
+          <p style="font:400 18.5px/29px Inter;color:#475569;max-width:540px;margin-bottom:30px">Bring leads, counselling, applications, documents, payments, visas, partners, and team operations into one secure CRM built for education businesses.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:18px">
+            <a href="#demo" style="font:700 15.5px Manrope;color:#fff;text-decoration:none;background:#2453D4;padding:15px 28px;border-radius:8px;box-shadow:0 10px 24px rgba(36,83,212,.3)" style-hover="background:#1c44b8">Book a demo</a>
+            <a href="#platform" style="font:700 15.5px Manrope;color:#0B1230;text-decoration:none;background:#fff;border:1px solid #DCE3EE;padding:15px 26px;border-radius:8px" style-hover="border-color:#212177">See the product</a>
+          </div>
+          <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;font:500 13.5px Inter;color:#64748B">
+            <span style="display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#0F9F6E"></span>Workspace-isolated data</span>
+            <span style="display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#0F9F6E"></span>Guided data migration</span>
+            <span style="display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#0F9F6E"></span>Demo on your real workflow</span>
+          </div>
+        </div>
+
+        <!-- HERO PRODUCT SCENE -->
+        <div style="position:relative;opacity:1">
+          <div style="position:absolute;inset:18px -40px -30px 0;background:linear-gradient(135deg,#212177,#2453D4);border-radius:18px;opacity:.10;transform:rotate(2deg)"></div>
+          <div style="position:relative;background:#fff;border:1px solid #E4EAF3;border-radius:14px;box-shadow:0 30px 70px -24px rgba(11,18,48,.35);overflow:hidden">
+            <div style="height:38px;background:#0B1230;display:flex;align-items:center;gap:7px;padding:0 14px">
+              <span style="width:10px;height:10px;border-radius:50%;background:#CB0000"></span>
+              <span style="width:10px;height:10px;border-radius:50%;background:#E6A100"></span>
+              <span style="width:10px;height:10px;border-radius:50%;background:#0F9F6E"></span>
+              <span style="margin-left:12px;font:600 11.5px Inter;color:#9aa6c4">app.admytt.com / dashboard</span>
+            </div>
+            <div style="display:flex;min-height:392px">
+              <div style="width:62px;background:#161a52;display:flex;flex-direction:column;align-items:center;gap:7px;padding:14px 0">
+                <span style="width:26px;height:26px;border-radius:7px;background:#2453D4;display:flex;align-items:center;justify-content:center;font:700 12px Manrope;color:#fff">a</span>
+                <span style="width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.16)"></span>
+                <span style="width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.07)"></span>
+                <span style="width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.07)"></span>
+                <span style="width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.07)"></span>
+                <span style="width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.07)"></span>
+              </div>
+              <div style="flex:1;padding:18px">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+                  <div style="font:700 15px Manrope;color:#0B1230">Today's work</div>
+                  <div style="font:600 11px Inter;color:#fff;background:#0F9F6E;border-radius:999px;padding:3px 10px">Fall 2026 intake</div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px">
+                  <div style="background:#F6F8FC;border:1px solid #EAEFF7;border-radius:9px;padding:11px"><div style="font:800 22px Manrope;color:#0B1230">128</div><div style="font:500 11px Inter;color:#64748B">Open leads</div></div>
+                  <div style="background:#F6F8FC;border:1px solid #EAEFF7;border-radius:9px;padding:11px"><div style="font:800 22px Manrope;color:#2453D4">37</div><div style="font:500 11px Inter;color:#64748B">Applications</div></div>
+                  <div style="background:#F6F8FC;border:1px solid #EAEFF7;border-radius:9px;padding:11px"><div style="font:800 22px Manrope;color:#CB0000">6</div><div style="font:500 11px Inter;color:#64748B">Visas due</div></div>
+                </div>
+                <div style="font:700 11px Inter;color:#94a3b8;margin-bottom:8px;text-transform:uppercase;letter-spacing:.04em">Pipeline</div>
+                <div style="display:flex;flex-direction:column;gap:8px">
+                  <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #EAEFF7;border-radius:9px;padding:9px 11px">
+                    <span style="width:30px;height:30px;border-radius:50%;background:#EAF0FF;color:#2453D4;font:700 12px Manrope;display:flex;align-items:center;justify-content:center">PS</span>
+                    <div style="flex:1"><div style="font:600 12.5px Inter;color:#0B1230">Priya Sharma</div><div style="font:500 11px Inter;color:#94a3b8">MSc Data Science · UK</div></div>
+                    <span style="font:600 10.5px Inter;color:#0F9F6E;background:#E6F6EF;border-radius:999px;padding:3px 9px">Offer</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #EAEFF7;border-radius:9px;padding:9px 11px">
+                    <span style="width:30px;height:30px;border-radius:50%;background:#FBE9E9;color:#CB0000;font:700 12px Manrope;display:flex;align-items:center;justify-content:center">AK</span>
+                    <div style="flex:1"><div style="font:600 12.5px Inter;color:#0B1230">Arjun Kapoor</div><div style="font:500 11px Inter;color:#94a3b8">BBA · Canada</div></div>
+                    <span style="font:600 10.5px Inter;color:#D97706;background:#FCEFDD;border-radius:999px;padding:3px 9px">Docs due</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #EAEFF7;border-radius:9px;padding:9px 11px">
+                    <span style="width:30px;height:30px;border-radius:50%;background:#EEF0FF;color:#212177;font:700 12px Manrope;display:flex;align-items:center;justify-content:center">MN</span>
+                    <div style="flex:1"><div style="font:600 12.5px Inter;color:#0B1230">Meera Nair</div><div style="font:500 11px Inter;color:#94a3b8">MBA · Australia</div></div>
+                    <span style="font:600 10.5px Inter;color:#2453D4;background:#EAF0FF;border-radius:999px;padding:3px 9px">Counselling</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="position:absolute;bottom:-22px;left:-26px;background:#fff;border:1px solid #E4EAF3;border-radius:11px;box-shadow:0 16px 34px -12px rgba(11,18,48,.28);padding:11px 14px;display:flex;align-items:center;gap:10px" data-float="1">
+            <span style="width:34px;height:34px;border-radius:9px;background:#212177;display:flex;align-items:center;justify-content:center;font:700 14px Manrope;color:#fff">AI</span>
+            <div><div style="font:700 12px Manrope;color:#0B1230">3 leads need follow-up today</div><div style="font:500 11px Inter;color:#94a3b8">Suggested by AI Command Centre</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAPABILITY PROOF (no unverified metrics) -->
+    <div style="max-width:1240px;margin:60px auto 0;padding:0 28px">
+      <div style="border-top:1px solid #E4EAF3;padding:30px 0 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:22px" data-trust="1">
+        <div>
+          <div style="font:700 15px Manrope;color:#0B1230;margin-bottom:5px">Multi-tenant by design</div>
+          <div style="font:400 13.5px/20px Inter;color:#64748B">Each company operates in its own isolated workspace — records never cross customers.</div>
+        </div>
+        <div>
+          <div style="font:700 15px Manrope;color:#0B1230;margin-bottom:5px">Built for education work</div>
+          <div style="font:400 13.5px/20px Inter;color:#64748B">Enquiry, counselling, applications, documents, and visa stages are first-class — not custom fields.</div>
+        </div>
+        <div>
+          <div style="font:700 15px Manrope;color:#0B1230;margin-bottom:5px">One student record</div>
+          <div style="font:400 13.5px/20px Inter;color:#64748B">Every team works from the same record, so context is never lost between people or tools.</div>
+        </div>
+        <div>
+          <div style="font:700 15px Manrope;color:#0B1230;margin-bottom:5px">Your data stays yours</div>
+          <div style="font:400 13.5px/20px Inter;color:#64748B">Export your records at any time. Role-based access keeps each person scoped to their work.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STUDENT JOURNEY RAIL ============ -->
+  <section id="platform" style="background:#fff;border-top:1px solid #EEF2F8;padding:92px 0">
+    <div style="max-width:1240px;margin:0 auto;padding:0 28px">
+      <div style="max-width:680px;margin-bottom:40px">
+        <div style="font:700 13px Inter;color:#2453D4;margin-bottom:12px">One connected operating flow</div>
+        <h2 style="font:800 38px/45px Manrope;letter-spacing:-.02em;color:#0B1230;margin-bottom:14px">Follow one student record across every team</h2>
+        <p style="font:400 18px/28px Inter;color:#475569">From the first enquiry to a confirmed enrolment, every stage stays on the same record. Select a stage to see exactly what your team works on.</p>
+      </div>
+
+      <!-- stepper -->
+      <div style="display:flex;gap:0;margin-bottom:30px;overflow-x:auto;padding-bottom:6px" data-stepper="1">
+        <sc-for list="{{ stagesNav }}" as="st" hint-placeholder-count="8">
+          <button onClick="{{ st.onSelect }}" style="{{ st.btnStyle }}">
+            <span style="{{ st.numStyle }}">{{ st.num }}</span>
+            <span style="font:700 13px Manrope;white-space:nowrap">{{ st.label }}</span>
+          </button>
+        </sc-for>
+      </div>
+
+      <div style="display:grid;grid-template-columns:.82fr 1.18fr;gap:28px;align-items:stretch" data-journey="1">
+        <!-- outcome -->
+        <div style="background:#0B1230;border-radius:14px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;min-height:360px">
+          <div>
+            <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border-radius:999px;padding:6px 13px;font:700 12px Inter;color:#cdd6ee;margin-bottom:22px">Stage {{ active.num }} of 8 · {{ active.label }}</div>
+            <p style="font:700 26px/34px Manrope;color:#fff;letter-spacing:-.01em">{{ active.outcome }}</p>
+          </div>
+          <div style="margin-top:26px;display:flex;flex-direction:column;gap:11px">
+            <sc-for list="{{ active.bullets }}" as="b" hint-placeholder-count="3">
+              <div style="display:flex;align-items:flex-start;gap:10px;font:500 14px Inter;color:#c2cbe6"><span style="color:#5fd0a6;font-weight:700;margin-top:1px">✓</span>{{ b }}</div>
+            </sc-for>
+          </div>
+        </div>
+        <!-- product panel -->
+        <div style="background:#F6F8FC;border:1px solid #E4EAF3;border-radius:14px;overflow:hidden;box-shadow:0 24px 50px -28px rgba(11,18,48,.3)">
+          <div style="height:48px;background:#fff;border-bottom:1px solid #EEF2F8;display:flex;align-items:center;gap:11px;padding:0 18px">
+            <span style="width:32px;height:32px;border-radius:50%;background:#EEF0FF;color:#212177;font:700 12px Manrope;display:flex;align-items:center;justify-content:center">PS</span>
+            <div><div style="font:700 13px Manrope;color:#0B1230">Priya Sharma</div><div style="font:500 11px Inter;color:#94a3b8">UK · Fall 2026 · #STU-2041</div></div>
+            <span style="margin-left:auto;font:700 11px Inter;color:#475569;background:#F1F5FB;border-radius:7px;padding:5px 11px">{{ active.head }}</span>
+          </div>
+          <div style="padding:18px">
+            <div style="display:flex;flex-direction:column;gap:9px">
+              <sc-for list="{{ active.rows }}" as="r" hint-placeholder-count="5">
+                <div style="display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #EAEFF7;border-radius:9px;padding:12px 14px">
+                  <span style="font:500 13px Inter;color:#64748B;width:150px;flex-shrink:0">{{ r.l }}</span>
+                  <span style="font:600 13.5px Inter;color:#0B1230;flex:1">{{ r.v }}</span>
+                  <span style="{{ r.badgeStyle }}">{{ r.tag }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROBLEM / BEFORE-AFTER ============ -->
+  <section style="background:#F6F8FC;padding:92px 0">
+    <div style="max-width:1240px;margin:0 auto;padding:0 28px">
+      <div style="max-width:680px;margin-bottom:40px">
+        <div style="font:700 13px Inter;color:#2453D4;margin-bottom:12px">The cost of disconnected tools</div>
+        <h2 style="font:800 38px/45px Manrope;letter-spacing:-.02em;color:#0B1230;margin-bottom:14px">When the student record lives in ten places, work falls through the gaps</h2>
+        <p style="font:400 18px/28px Inter;color:#475569">Spreadsheets, inboxes, WhatsApp threads, shared drives, and individual memory each hold part of the truth — and no one holds all of it.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px" data-ba="1">
+        <div style="background:#fff;border:1px solid #E9DADA;border-radius:14px;padding:30px">
+          <div style="font:700 13px Inter;color:#CB0000;margin-bottom:16px">Before adMYTT</div>
+          <div style="display:flex;flex-direction:column;gap:13px">
+            <sc-for list="{{ beforeItems }}" as="b" hint-placeholder-count="5">
+              <div style="display:flex;align-items:flex-start;gap:11px;font:500 15px/22px Inter;color:#475569"><span style="color:#CB0000;font-weight:700;margin-top:1px">—</span>{{ b }}</div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="background:#0B1230;border-radius:14px;padding:30px">
+          <div style="font:700 13px Inter;color:#5fd0a6;margin-bottom:16px">With adMYTT</div>
+          <div style="display:flex;flex-direction:column;gap:13px">
+            <sc-for list="{{ afterItems }}" as="a" hint-placeholder-count="5">
+              <div style="display:flex;align-items:flex-start;gap:11px;font:500 15px/22px Inter;color:#dfe5f4"><span style="color:#5fd0a6;font-weight:700;margin-top:1px">✓</span>{{ a }}</div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCT PLATFORM ============ -->
+  <section style="background:#fff;border-top:1px solid #EEF2F8;padding:92px 0">
+    <div style="max-width:1240px;margin:0 auto;padding:0 28px">
+      <div style="max-width:680px;margin-bottom:44px">
+        <div style="font:700 13px Inter;color:#2453D4;margin-bottom:12px">The platform</div>
+        <h2 style="font:800 38px/45px Manrope;letter-spacing:-.02em;color:#0B1230;margin-bottom:14px">Every part of the consultancy, in one workspace</h2>
+        <p style="font:400 18px/28px Inter;color:#475569">Purpose-built modules for the way education teams actually operate — not a generic sales CRM with custom fields bolted on.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px" data-platform="1">
+        <sc-for list="{{ platform }}" as="p" hint-placeholder-count="9">
+          <div style="background:#fff;border:1px solid #E9EEF6;border-radius:13px;padding:24px" style-hover="border-color:#C9D6EC;box-shadow:0 16px 34px -22px rgba(11,18,48,.3)">
+            <span style="{{ p.iconStyle }}">{{ p.icon }}</span>
+            <div style="font:700 17px Manrope;color:#0B1230;margin:15px 0 7px">{{ p.title }}</div>
+            <div style="font:400 14.5px/22px Inter;color:#64748B">{{ p.desc }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AI COMMAND CENTRE ============ -->
+  <section id="ai" style="background:linear-gradient(160deg,#0B1230 0%,#161a52 100%);padding:92px 0;position:relative;overflow:hidden">
+    <div style="position:absolute;top:-80px;right:-60px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,#2453D4 0%,transparent 70%);opacity:.4"></div>
+    <div style="max-width:1240px;margin:0 auto;padding:0 28px;position:relative">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center" data-ai="1">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:6px 14px;font:700 12px Inter;color:#cdd6ee;margin-bottom:20px">AI Command Centre</div>
+          <h2 style="font:800 38px/45px Manrope;letter-spacing:-.02em;color:#fff;margin-bottom:16px">AI that does the work, not the talking</h2>
+          <p style="font:400 18px/28px Inter;color:#b7c0dd;margin-bottom:26px">Every suggestion maps to a real product action your team can review and act on. adMYTT never makes final admission, financial, legal, or visa decisions.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px">
+            <sc-for list="{{ aiActions }}" as="a" hint-placeholder-count="6">
+              <div style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:11px 13px;font:600 13.5px Inter;color:#e7ebf7"><span style="color:#5fd0a6">●</span>{{ a }}</div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 30px 70px -28px rgba(0,0,0,.6)">
+          <div style="background:#161a52;padding:14px 18px;display:flex;align-items:center;gap:10px">
+            <span style="width:30px;height:30px;border-radius:8px;background:#2453D4;display:flex;align-items:center;justify-content:center;font:700 13px Manrope;color:#fff">AI</span>
+            <div style="font:700 13px Manrope;color:#fff">Operational briefing · this morning</div>
+          </div>
+          <div style="padding:18px;display:flex;flex-direction:column;gap:11px">
+            <div style="background:#FCEFDD;border-left:3px solid #D97706;border-radius:8px;padding:13px 15px"><div style="font:700 13px Manrope;color:#0B1230;margin-bottom:3px">3 leads at risk of going cold</div><div style="font:500 12.5px Inter;color:#64748B">No contact in 5+ days — suggested follow-ups drafted.</div></div>
+            <div style="background:#FBE9E9;border-left:3px solid #CB0000;border-radius:8px;padding:13px 15px"><div style="font:700 13px Manrope;color:#0B1230;margin-bottom:3px">Priya Sharma — missing financial document</div><div style="font:500 12.5px Inter;color:#64748B">Visa filing blocked until bank statement is verified.</div></div>
+            <div style="background:#E6F6EF;border-left:3px solid #0F9F6E;border-radius:8px;padding:13px 15px"><div style="font:700 13px Manrope;color:#0B1230;margin-bottom:3px">Application risk: low across 37 active files</div><div style="font:500 12.5px Inter;color:#64748B">2 deadlines this week — owners notified.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BUILT FOR EACH TEAM ============ -->
+  <section id="teams" style="background:#fff;padding:92px 0">
+    <div style="max-width:1240px;margin:0 auto;padding:0 28px">
+      <div style="max-width:680px;margin-bottom:34px">
+        <div style="font:700 13px Inter;color:#2453D4;margin-bottom:12px">Built for each team</div>
+        <h2 style="font:800 38px/45px Manrope;letter-spacing:-.02em;color:#0B1230;margin-bottom:14px">One platform, reorganised around each role</h2>
+        <p style="font:400 18px/28px Inter;color:#475569">Owners, counsellors, admissions, visa, finance, and partner teams each see the workflow, screen, and outcomes that match their job.</p>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px" data-teamtabs="1">
+        <sc-for list="{{ teamsNav }}" as="t" hint-placeholder-count="6">
+          <button onClick="{{ t.onSelect }}" style="{{ t.tabStyle }}">{{ t.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;background:#F6F8FC;border:1px solid #E9EEF6;border-radius:16px;padding:36px" data-teamview="1">
+        <div>
+          <h3 style="font:700 25px/32px Manrope;color:#0B1230;margin-bottom:14px">{{ teamActive.headline }}</h3>
+          <p style="font:400 16px/25px Inter;color:#475569;margin-bottom:22px">{{ teamActive.intro }}</p>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <sc-for list="{{ teamActive.points }}" as="p" hint-placeholder-count="3">
+              <div style="display:flex;align-items:flex-start;gap:11px;font:500 15px/22px Inter;color:#334155"><span style="color:#2453D4;font-weight:700;margin-top:1px">✓</span>{{ p }}</div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="background:#fff;border:1px solid #E4EAF3;border-radius:12px;overflow:hidden;box-shadow:0 22px 46px -28px rgba(11,18,48,.3)">
+          <div style="background:#0B1230;padding:12px 16px;font:700 12.5px Manrope;color:#fff">{{ teamActive.panelTitle }}</div>
+          <div style="padding:16px;display:flex;flex-direction:column;gap:9px">
+            <sc-for list="{{ teamActive.rows }}" as="r" hint-placeholder-count="4">
+              <div style="display:flex;align-items:center;gap:12px;border:1px solid #EAEFF7;border-radius:9px;padding:11px 13px">
+                <span style="font:500 13px Inter;color:#64748B;flex:1">{{ r.l }}</span>
+                <span style="{{ r.badgeStyle }}">{{ r.tag }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INTEGRATIONS ============ -->
+  <section style="background:#F6F8FC;padding:92px 0;border-top:1px solid #EEF2F8">
+    <div style="max-width:1240px;margin:0 auto;padding:0 28px">
+      <div style="max-width:680px;margin-bottom:40px">
+        <div style="font:700 13px Inter;color:#2453D4;margin-bottom:12px">Automation &amp; integrations</div>
+        <h2 style="font:800 38px/45px Manrope;letter-spacing:-.02em;color:#0B1230;margin-bottom:14px">Connect the channels your enquiries already arrive on</h2>
+        <p style="font:400 18px/28px Inter;color:#475569">Capture, route, and respond automatically. Planned integrations are clearly marked and never mixed with active ones.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px" data-integ="1">
+        <sc-for list="{{ integrations }}" as="i" hint-placeholder-count="8">
+          <div style="background:#fff;border:1px solid #E9EEF6;border-radius:11px;padding:18px 18px 16px;position:relative">
+            <span style="width:38px;height:38px;border-radius:9px;background:#F1F5FB;display:flex;align-items:center;justify-content:center;font:700 14px Manrope;color:#212177">{{ i.ab }}</span>
+            <div style="font:700 14.5px Manrope;color:#0B1230;margin:12px 0 4px">{{ i.name }}</div>
+            <div style="font:400 12.5px/18px Inter;color:#94a3b8">{{ i.desc }}</div>
+            <span style="{{ i.tagStyle }}">{{ i.tag }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECURITY ============ -->
+  <section id="security" style="background:#fff;padding:92px 0">
+    <div style="max-width:1240px;margin:0 auto;padding:0 28px">
+      <div style="display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start" data-sec="1">
+        <div>
+          <div style="font:700 13px Inter;color:#2453D4;margin-bottom:12px">Security &amp; trust</div>
+          <h2 style="font:800 38px/45px Manrope;letter-spacing:-.02em;color:#0B1230;margin-bottom:14px">Each company gets its own isolated workspace</h2>
+          <p style="font:400 17px/27px Inter;color:#475569;margin-bottom:24px">Customer records and documents are workspace-scoped. Access is role-based, sessions expire and can be revoked, and important actions are written to an audit log.</p>
+          <a href="#demo" style="font:700 15px Manrope;color:#fff;text-decoration:none;background:#212177;padding:13px 22px;border-radius:8px;display:inline-block" style-hover="background:#1a1a63">Read the security overview →</a>
+          <div style="font:500 12.5px Inter;color:#94a3b8;margin-top:16px;max-width:380px">We describe the controls we operate. We do not claim SOC 2, ISO 27001, or other certifications unless formally verified.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+          <sc-for list="{{ securityPoints }}" as="s" hint-placeholder-count="6">
+            <div style="background:#F6F8FC;border:1px solid #E9EEF6;border-radius:12px;padding:20px">
+              <span style="width:34px;height:34px;border-radius:9px;background:#EEF0FF;color:#212177;display:flex;align-items:center;justify-content:center;font:700 13px Manrope">{{ s.ab }}</span>
+              <div style="font:700 15px Manrope;color:#0B1230;margin:13px 0 6px">{{ s.title }}</div>
+              <div style="font:400 13.5px/20px Inter;color:#64748B">{{ s.desc }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MIGRATION ============ -->
+  <section style="background:#0B1230;padding:88px 0">
+    <div style="max-width:1240px;margin:0 auto;padding:0 28px">
+      <div style="max-width:680px;margin-bottom:40px">
+        <div style="font:700 13px Inter;color:#7e8ed4;margin-bottom:12px">Migration &amp; onboarding</div>
+        <h2 style="font:800 38px/45px Manrope;letter-spacing:-.02em;color:#fff;margin-bottom:14px">Move your consultancy across in four steps</h2>
+        <p style="font:400 18px/28px Inter;color:#b7c0dd">Bring your spreadsheets or existing CRM, configure your workspace, invite your team, and start operating.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px" data-mig="1">
+        <sc-for list="{{ migration }}" as="m" hint-placeholder-count="4">
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:24px">
+            <div style="font:800 16px Manrope;color:#5fd0a6;margin-bottom:14px">{{ m.n }}</div>
+            <div style="font:700 17px Manrope;color:#fff;margin-bottom:8px">{{ m.title }}</div>
+            <div style="font:400 14px/21px Inter;color:#aab4d6">{{ m.desc }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT YOU CAN VERIFY ============ -->
+  <section style="background:#F6F8FC;padding:92px 0;border-top:1px solid #EEF2F8">
+    <div style="max-width:1240px;margin:0 auto;padding:0 28px">
+      <div style="background:#fff;border:1px solid #E9EEF6;border-radius:16px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center" data-evid="1">
+        <div>
+          <div style="display:flex;align-items:flex-end;gap:6px;margin-bottom:20px">
+            <span style="width:7px;height:30px;background:#CB0000;border-radius:1px"></span>
+            <span style="width:5px;height:22px;background:#212177;border-radius:1px"></span>
+            <span style="width:4px;height:14px;background:#CB0000;border-radius:1px"></span>
+          </div>
+          <h2 style="font:800 32px/40px Manrope;letter-spacing:-.02em;color:#0B1230;margin-bottom:14px">See it on your own workflow before you decide</h2>
+          <p style="font:400 17px/27px Inter;color:#475569;margin-bottom:24px">We don't lead with claims we can't show. Book a demo and we'll walk through adMYTT on a workspace set up for your operating model — leads, applications, documents, and visas, end to end.</p>
+          <a href="#demo" style="font:700 15px Manrope;color:#fff;text-decoration:none;background:#2453D4;padding:14px 24px;border-radius:8px;display:inline-block" style-hover="background:#1c44b8">Book a demo</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:flex-start;gap:13px;background:#F6F8FC;border:1px solid #EAEFF7;border-radius:11px;padding:16px 18px">
+            <span style="width:30px;height:30px;flex-shrink:0;border-radius:8px;background:#EEF0FF;color:#212177;display:flex;align-items:center;justify-content:center;font:700 12px Manrope">01</span>
+            <div><div style="font:700 14.5px Manrope;color:#0B1230;margin-bottom:2px">One connected student record</div><div style="font:400 13px/19px Inter;color:#64748B">Watch a single record move across every team without re-keying.</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:13px;background:#F6F8FC;border:1px solid #EAEFF7;border-radius:11px;padding:16px 18px">
+            <span style="width:30px;height:30px;flex-shrink:0;border-radius:8px;background:#EAF0FF;color:#2453D4;display:flex;align-items:center;justify-content:center;font:700 12px Manrope">02</span>
+            <div><div style="font:700 14.5px Manrope;color:#0B1230;margin-bottom:2px">Workspace isolation, in the product</div><div style="font:400 13px/19px Inter;color:#64748B">See exactly how access is scoped to your company and roles.</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:13px;background:#F6F8FC;border:1px solid #EAEFF7;border-radius:11px;padding:16px 18px">
+            <span style="width:30px;height:30px;flex-shrink:0;border-radius:8px;background:#E6F6EF;color:#0F9F6E;display:flex;align-items:center;justify-content:center;font:700 12px Manrope">03</span>
+            <div><div style="font:700 14.5px Manrope;color:#0B1230;margin-bottom:2px">A migration plan for your data</div><div style="font:400 13px/19px Inter;color:#64748B">Bring a sample spreadsheet and see how import mapping works.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section id="pricing" style="background:#fff;padding:92px 0">
+    <div style="max-width:1240px;margin:0 auto;padding:0 28px">
+      <div style="text-align:center;max-width:680px;margin:0 auto 30px">
+        <div style="font:700 13px Inter;color:#2453D4;margin-bottom:12px">Pricing</div>
+        <h2 style="font:800 38px/45px Manrope;letter-spacing:-.02em;color:#0B1230;margin-bottom:14px">Transparent plans for teams of every size</h2>
+        <p style="font:400 18px/28px Inter;color:#475569">Book a demo or talk to sales. Seats and module limits are shown up front — no surprises at renewal.</p>
+      </div>
+      <div style="display:flex;justify-content:center;margin-bottom:36px">
+        <div style="display:inline-flex;background:#F1F5FB;border:1px solid #E4EAF3;border-radius:10px;padding:4px">
+          <button onClick="{{ setMonthly }}" style="{{ monthlyStyle }}">Monthly</button>
+          <button onClick="{{ setAnnual }}" style="{{ annualStyle }}">Annual · save 20%</button>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start" data-pricing="1">
+        <sc-for list="{{ plans }}" as="p" hint-placeholder-count="3">
+          <div style="{{ p.cardStyle }}">
+            <sc-if value="{{ p.featured }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute;top:-11px;left:24px;background:#CB0000;color:#fff;font:700 11px Inter;border-radius:999px;padding:4px 12px">Most popular</div>
+            </sc-if>
+            <div style="font:700 17px Manrope;color:{{ p.titleColor }};margin-bottom:6px">{{ p.name }}</div>
+            <div style="font:400 13.5px/20px Inter;color:{{ p.subColor }};margin-bottom:20px;min-height:40px">{{ p.who }}</div>
+            <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:4px"><span style="font:800 38px Manrope;color:{{ p.priceColor }}">{{ p.price }}</span><span style="font:500 14px Inter;color:{{ p.subColor }}">{{ p.unit }}</span></div>
+            <div style="font:500 12.5px Inter;color:{{ p.subColor }};margin-bottom:22px">{{ p.billNote }}</div>
+            <a href="#demo" style="{{ p.ctaStyle }}">{{ p.cta }}</a>
+            <div style="height:1px;background:{{ p.divColor }};margin:22px 0"></div>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <sc-for list="{{ p.features }}" as="f" hint-placeholder-count="5">
+                <div style="display:flex;align-items:flex-start;gap:9px;font:500 13.5px/20px Inter;color:{{ p.featColor }}"><span style="color:{{ p.checkColor }};font-weight:700">✓</span>{{ f }}</div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="text-align:center;font:500 13px Inter;color:#94a3b8;margin-top:24px">Prices shown exclusive of applicable taxes. Annual billing is committed for 12 months. Cancel anytime; your data stays exportable.</div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" style="background:#F6F8FC;padding:92px 0;border-top:1px solid #EEF2F8">
+    <div style="max-width:880px;margin:0 auto;padding:0 28px">
+      <div style="text-align:center;margin-bottom:40px">
+        <div style="font:700 13px Inter;color:#2453D4;margin-bottom:12px">Frequently asked</div>
+        <h2 style="font:800 38px/45px Manrope;letter-spacing:-.02em;color:#0B1230">The questions buyers ask first</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px" data-faq="1">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+          <div style="background:#fff;border:1px solid #E9EEF6;border-radius:11px;overflow:hidden">
+            <button onClick="{{ f.onToggle }}" style="width:100%;display:flex;align-items:center;gap:16px;background:none;border:none;padding:19px 22px;cursor:pointer;text-align:left">
+              <span style="font:700 16.5px Manrope;color:#0B1230;flex:1">{{ f.q }}</span>
+              <span style="{{ f.iconStyle }}">+</span>
+            </button>
+            <sc-if value="{{ f.isOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:0 22px 20px;font:400 15px/24px Inter;color:#475569">{{ f.a }}</div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BOOK A DEMO (working form) ============ -->
+  <section id="demo" style="background:linear-gradient(135deg,#212177 0%,#0B1230 100%);padding:92px 0;position:relative;overflow:hidden">
+    <div style="position:absolute;bottom:-100px;left:-60px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,#2453D4 0%,transparent 70%);opacity:.4"></div>
+    <div style="max-width:1240px;margin:0 auto;padding:0 28px;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start" data-demoform="1">
+      <div style="padding-top:8px">
+        <h2 style="font:800 40px/47px Manrope;letter-spacing:-.02em;color:#fff;margin-bottom:18px">See how adMYTT fits the way your consultancy works.</h2>
+        <p style="font:400 18px/28px Inter;color:#c2cbe6;margin-bottom:30px">Book a 30-minute walkthrough on a workspace set up for your operating model. No slides — just the product, on your real workflow.</p>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="display:flex;align-items:flex-start;gap:13px"><span style="width:28px;height:28px;flex-shrink:0;border-radius:8px;background:rgba(255,255,255,.1);color:#5fd0a6;display:flex;align-items:center;justify-content:center;font:700 13px Manrope">1</span><div><div style="font:700 15px Manrope;color:#fff">You tell us how you operate</div><div style="font:400 14px/21px Inter;color:#aab4d6">Branches, teams, and the stages you run today.</div></div></div>
+          <div style="display:flex;align-items:flex-start;gap:13px"><span style="width:28px;height:28px;flex-shrink:0;border-radius:8px;background:rgba(255,255,255,.1);color:#5fd0a6;display:flex;align-items:center;justify-content:center;font:700 13px Manrope">2</span><div><div style="font:700 15px Manrope;color:#fff">We walk the live product</div><div style="font:400 14px/21px Inter;color:#aab4d6">Enquiry to enrolment on one connected record.</div></div></div>
+          <div style="display:flex;align-items:flex-start;gap:13px"><span style="width:28px;height:28px;flex-shrink:0;border-radius:8px;background:rgba(255,255,255,.1);color:#5fd0a6;display:flex;align-items:center;justify-content:center;font:700 13px Manrope">3</span><div><div style="font:700 15px Manrope;color:#fff">You get a migration plan</div><div style="font:400 14px/21px Inter;color:#aab4d6">A clear path to move your data across.</div></div></div>
+        </div>
+      </div>
+
+      <div style="background:#fff;border-radius:16px;padding:30px;box-shadow:0 34px 80px -34px rgba(0,0,0,.6)">
+        <sc-if value="{{ isSuccess }}" hint-placeholder-val="{{ false }}">
+          <div style="text-align:center;padding:26px 6px">
+            <div style="width:58px;height:58px;margin:0 auto 18px;border-radius:50%;background:#E6F6EF;display:flex;align-items:center;justify-content:center;font:700 27px Manrope;color:#0F9F6E">✓</div>
+            <div style="font:800 23px Manrope;color:#0B1230;margin-bottom:9px">Request received</div>
+            <p style="font:400 15px/23px Inter;color:#475569;max-width:340px;margin:0 auto 22px">Thanks — a product specialist will reply within one business day to schedule your demo. A confirmation is on its way to your work email.</p>
+            <button type="button" onClick="{{ onReset }}" style="font:700 14px Manrope;color:#212177;background:#fff;border:1px solid #DCE3EE;border-radius:8px;padding:11px 20px;cursor:pointer" style-hover="border-color:#212177">Book another demo</button>
+          </div>
+        </sc-if>
+        <sc-if value="{{ showForm }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ onSubmit }}" novalidate="{{ true }}">
+            <div style="font:800 20px Manrope;color:#0B1230;margin-bottom:4px">Book a demo</div>
+            <div style="font:400 13.5px Inter;color:#64748B;margin-bottom:20px">Fields marked * are required.</div>
+
+            <sc-if value="{{ isError }}" hint-placeholder-val="{{ false }}">
+              <div role="alert" style="display:flex;align-items:flex-start;gap:9px;background:#FBE9E9;border:1px solid #F2C9C9;border-radius:8px;padding:11px 13px;margin-bottom:16px;font:500 13px/19px Inter;color:#9B1C1C"><span style="font-weight:700">!</span>Something went wrong sending your request. Please try again, or email demo@admytt.com.</div>
+            </sc-if>
+            <sc-if value="{{ isDuplicate }}" hint-placeholder-val="{{ false }}">
+              <div role="alert" style="display:flex;align-items:flex-start;gap:9px;background:#FCEFDD;border:1px solid #F0D6AE;border-radius:8px;padding:11px 13px;margin-bottom:16px;font:500 13px/19px Inter;color:#92590B"><span style="font-weight:700">i</span>We already have a recent demo request from this email. We'll be in touch shortly — or email demo@admytt.com to follow up.</div>
+            </sc-if>
+
+            <div style="display:flex;flex-direction:column;gap:14px">
+              <div>
+                <label for="df-name" style="display:block;font:600 13px Inter;color:#334155;margin-bottom:6px">Full name *</label>
+                <input id="df-name" type="text" autocomplete="name" value="{{ f.name }}" onChange="{{ onName }}" aria-invalid="{{ f.aiName }}" placeholder="Aisha Khan" style="{{ f.stName }}" style-focus="border-color:#2453D4;box-shadow:0 0 0 3px rgba(36,83,212,.12)">
+                <div style="font:500 12px Inter;color:#CB0000;margin-top:5px">{{ f.errName }}</div>
+              </div>
+              <div>
+                <label for="df-company" style="display:block;font:600 13px Inter;color:#334155;margin-bottom:6px">Company name *</label>
+                <input id="df-company" type="text" autocomplete="organization" value="{{ f.company }}" onChange="{{ onCompany }}" aria-invalid="{{ f.aiCompany }}" placeholder="Bright Futures Education" style="{{ f.stCompany }}" style-focus="border-color:#2453D4;box-shadow:0 0 0 3px rgba(36,83,212,.12)">
+                <div style="font:500 12px Inter;color:#CB0000;margin-top:5px">{{ f.errCompany }}</div>
+              </div>
+              <div>
+                <label for="df-email" style="display:block;font:600 13px Inter;color:#334155;margin-bottom:6px">Work email *</label>
+                <input id="df-email" type="email" autocomplete="email" value="{{ f.email }}" onChange="{{ onEmail }}" aria-invalid="{{ f.aiEmail }}" placeholder="aisha@brightfutures.com" style="{{ f.stEmail }}" style-focus="border-color:#2453D4;box-shadow:0 0 0 3px rgba(36,83,212,.12)">
+                <div style="font:500 12px Inter;color:#CB0000;margin-top:5px">{{ f.errEmail }}</div>
+              </div>
+              <div>
+                <label for="df-phone" style="display:block;font:600 13px Inter;color:#334155;margin-bottom:6px">Phone *</label>
+                <input id="df-phone" type="tel" autocomplete="tel" value="{{ f.phone }}" onChange="{{ onPhone }}" aria-invalid="{{ f.aiPhone }}" placeholder="+91 98765 43210" style="{{ f.stPhone }}" style-focus="border-color:#2453D4;box-shadow:0 0 0 3px rgba(36,83,212,.12)">
+                <div style="font:500 12px Inter;color:#CB0000;margin-top:5px">{{ f.errPhone }}</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+                <div>
+                  <label for="df-team" style="display:block;font:600 13px Inter;color:#334155;margin-bottom:6px">Team size *</label>
+                  <select id="df-team" value="{{ f.team }}" onChange="{{ onTeam }}" aria-invalid="{{ f.aiTeam }}" style="{{ f.stTeam }}" style-focus="border-color:#2453D4;box-shadow:0 0 0 3px rgba(36,83,212,.12)">
+                    <option value="">Select…</option>
+                    <option value="1-5">1–5</option>
+                    <option value="6-20">6–20</option>
+                    <option value="21-50">21–50</option>
+                    <option value="51+">51+</option>
+                  </select>
+                  <div style="font:500 12px Inter;color:#CB0000;margin-top:5px">{{ f.errTeam }}</div>
+                </div>
+                <div>
+                  <label for="df-branches" style="display:block;font:600 13px Inter;color:#334155;margin-bottom:6px">Branches</label>
+                  <select id="df-branches" value="{{ f.branches }}" onChange="{{ onBranches }}" style="{{ f.stPlain }}" style-focus="border-color:#2453D4;box-shadow:0 0 0 3px rgba(36,83,212,.12)">
+                    <option value="">Select…</option>
+                    <option value="1">1</option>
+                    <option value="2-5">2–5</option>
+                    <option value="6+">6+</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label for="df-system" style="display:block;font:600 13px Inter;color:#334155;margin-bottom:6px">Current system</label>
+                <select id="df-system" value="{{ f.system }}" onChange="{{ onSystem }}" style="{{ f.stPlain }}" style-focus="border-color:#2453D4;box-shadow:0 0 0 3px rgba(36,83,212,.12)">
+                  <option value="">Select…</option>
+                  <option value="spreadsheets">Spreadsheets &amp; email</option>
+                  <option value="another-crm">Another CRM</option>
+                  <option value="mix">A mix of tools</option>
+                  <option value="none">Nothing structured yet</option>
+                </select>
+              </div>
+              <div>
+                <label for="df-message" style="display:block;font:600 13px Inter;color:#334155;margin-bottom:6px">Anything specific you want to see? <span style="color:#94a3b8;font-weight:400">(optional)</span></label>
+                <textarea id="df-message" rows="3" value="{{ f.message }}" onChange="{{ onMessage }}" placeholder="e.g. visa workflow for the UK, partner commissions…" style="{{ f.stArea }}" style-focus="border-color:#2453D4;box-shadow:0 0 0 3px rgba(36,83,212,.12)"></textarea>
+              </div>
+              <label for="df-consent" style="display:flex;align-items:flex-start;gap:10px;cursor:pointer">
+                <input id="df-consent" type="checkbox" checked="{{ f.consent }}" onChange="{{ onConsent }}" aria-invalid="{{ f.aiConsent }}" style="width:17px;height:17px;margin-top:2px;accent-color:#2453D4;flex-shrink:0">
+                <span style="font:400 12.5px/18px Inter;color:#64748B">I agree to be contacted about my demo request. adMYTT will not share my details, and I can opt out at any time.</span>
+              </label>
+              <div style="font:500 12px Inter;color:#CB0000;margin-top:-6px">{{ f.errConsent }}</div>
+
+              <button type="submit" disabled="{{ isSubmitting }}" style="{{ submitStyle }}" style-hover="background:#1c44b8">{{ submitLabel }}</button>
+              <div style="font:400 12px/18px Inter;color:#94a3b8;text-align:center">We reply within one business day. Your details are used only to schedule your demo.</div>
+            </div>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:#070d22;padding:64px 0 36px">
+    <div style="max-width:1240px;margin:0 auto;padding:0 28px">
+      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.08)" data-foot="1">
+        <div>
+          <img src="logo-wordmark-white.png" alt="adMYTT" style="height:24px;margin-bottom:16px">
+          <p style="font:400 14px/22px Inter;color:#8e9bc9;max-width:300px">The AI-enabled CRM and operating platform for education consultancies — from first enquiry to visa outcome.</p>
+        </div>
+        <div>
+          <div style="font:700 13px Manrope;color:#fff;margin-bottom:14px">Product</div>
+          <div style="display:flex;flex-direction:column;gap:10px;font:400 13.5px Inter">
+            <a href="#platform" style="color:#9aa6c4;text-decoration:none" style-hover="color:#fff">Lead management</a>
+            <a href="#platform" style="color:#9aa6c4;text-decoration:none" style-hover="color:#fff">Admissions</a>
+            <a href="#platform" style="color:#9aa6c4;text-decoration:none" style-hover="color:#fff">Documents &amp; visa</a>
+            <a href="#ai" style="color:#9aa6c4;text-decoration:none" style-hover="color:#fff">AI Command Centre</a>
+          </div>
+        </div>
+        <div>
+          <div style="font:700 13px Manrope;color:#fff;margin-bottom:14px">Company</div>
+          <div style="display:flex;flex-direction:column;gap:10px;font:400 13.5px Inter">
+            <a href="#security" style="color:#9aa6c4;text-decoration:none" style-hover="color:#fff">Security</a>
+            <a href="#pricing" style="color:#9aa6c4;text-decoration:none" style-hover="color:#fff">Pricing</a>
+            <a href="#faq" style="color:#9aa6c4;text-decoration:none" style-hover="color:#fff">Resources</a>
+            <a href="#demo" style="color:#9aa6c4;text-decoration:none" style-hover="color:#fff">Contact</a>
+          </div>
+        </div>
+        <div>
+          <div style="font:700 13px Manrope;color:#fff;margin-bottom:14px">Get started</div>
+          <div style="display:flex;flex-direction:column;gap:10px;font:400 13.5px Inter">
+            <a href="#demo" style="color:#9aa6c4;text-decoration:none" style-hover="color:#fff">Book a demo</a>
+            <a href="#platform" style="color:#9aa6c4;text-decoration:none" style-hover="color:#fff">See the product</a>
+            <a href="https://app.admytt.com" style="color:#9aa6c4;text-decoration:none" style-hover="color:#fff">Log in</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding-top:24px;font:400 12.5px Inter;color:#6b779c" data-footbot="1">
+        <div>© 2026 adMYTT. All rights reserved.</div>
+        <div style="display:flex;gap:20px">
+          <a href="#" style="color:#6b779c;text-decoration:none" style-hover="color:#fff">Privacy</a>
+          <a href="#" style="color:#6b779c;text-decoration:none" style-hover="color:#fff">Terms</a>
+          <a href="#" style="color:#6b779c;text-decoration:none" style-hover="color:#fff">Data processing</a>
+          <a href="#" style="color:#6b779c;text-decoration:none" style-hover="color:#fff">Status</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    menuOpen: false, stage: 0, team: 0, annual: false, faqOpen: 0,
+    form: { name:'', company:'', email:'', phone:'', team:'', branches:'', system:'', message:'', consent:false },
+    fErrors: {}, fStatus: 'idle'
+  };
+
+  _setF(key, val) {
+    this.setState((s) => {
+      const form = Object.assign({}, s.form, { [key]: val });
+      const fErrors = Object.assign({}, s.fErrors);
+      if (fErrors[key]) delete fErrors[key];
+      return { form, fErrors };
+    });
+  }
+
+  _validateForm(form) {
+    const e = {};
+    if (!form.name.trim()) e.name = 'Enter your full name.';
+    if (!form.company.trim()) e.company = 'Enter your company name.';
+    if (!form.email.trim()) e.email = 'Enter your work email.';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) e.email = 'Enter a valid email address.';
+    if (!form.phone.trim()) e.phone = 'Enter a phone number.';
+    else if (form.phone.replace(/[^0-9]/g, '').length < 7) e.phone = 'Enter a valid phone number.';
+    if (!form.team) e.team = 'Select your team size.';
+    if (!form.consent) e.consent = 'Please agree to be contacted.';
+    return e;
+  }
+
+  _submitForm(ev) {
+    if (ev && ev.preventDefault) ev.preventDefault();
+    if (this.state.fStatus === 'submitting') return;
+    const form = this.state.form;
+    const errs = this._validateForm(form);
+    if (Object.keys(errs).length) { this.setState({ fErrors: errs, fStatus: 'idle' }); return; }
+    this.setState({ fStatus: 'submitting', fErrors: {} });
+    // Simulated submission (no backend in this build). Demo states keyed off the email
+    // so reviewers can exercise duplicate/error paths: *+dupe@ , *+fail@
+    const email = form.email.toLowerCase();
+    setTimeout(() => {
+      let next = 'success';
+      if (/\+dupe@|duplicate@/.test(email)) next = 'duplicate';
+      else if (/\+fail@|error@/.test(email)) next = 'error';
+      this.setState({ fStatus: next });
+    }, 1100);
+  }
+
+  renderVals_form() {
+    const S = this.state;
+    const form = S.form, er = S.fErrors, status = S.fStatus;
+    const base = 'width:100%;font:400 14.5px Inter;color:#0B1230;background:#fff;border:1px solid #DCE3EE;border-radius:8px;padding:11px 13px;outline:none;transition:border-color .15s,box-shadow .15s;-webkit-appearance:none';
+    const bad = 'width:100%;font:400 14.5px Inter;color:#0B1230;background:#FEF6F6;border:1px solid #CB0000;border-radius:8px;padding:11px 13px;outline:none;transition:border-color .15s,box-shadow .15s;-webkit-appearance:none';
+    const st = (k) => er[k] ? bad : base;
+    const f = {
+      name:form.name, company:form.company, email:form.email, phone:form.phone,
+      team:form.team, branches:form.branches, system:form.system, message:form.message, consent:form.consent,
+      errName:er.name||'', errCompany:er.company||'', errEmail:er.email||'', errPhone:er.phone||'', errTeam:er.team||'', errConsent:er.consent||'',
+      aiName:!!er.name, aiCompany:!!er.company, aiEmail:!!er.email, aiPhone:!!er.phone, aiTeam:!!er.team, aiConsent:!!er.consent,
+      stName:st('name'), stCompany:st('company'), stEmail:st('email'), stPhone:st('phone'), stTeam:st('team'),
+      stPlain:base, stArea:base + ';resize:vertical;min-height:74px;font-family:Inter'
+    };
+    const submitting = status === 'submitting';
+    return {
+      f,
+      onName:(e)=>this._setF('name', e.target.value),
+      onCompany:(e)=>this._setF('company', e.target.value),
+      onEmail:(e)=>this._setF('email', e.target.value),
+      onPhone:(e)=>this._setF('phone', e.target.value),
+      onTeam:(e)=>this._setF('team', e.target.value),
+      onBranches:(e)=>this._setF('branches', e.target.value),
+      onSystem:(e)=>this._setF('system', e.target.value),
+      onMessage:(e)=>this._setF('message', e.target.value),
+      onConsent:(e)=>this._setF('consent', e.target.checked),
+      onSubmit:(e)=>this._submitForm(e),
+      onReset:()=>this.setState({ form:{ name:'', company:'', email:'', phone:'', team:'', branches:'', system:'', message:'', consent:false }, fErrors:{}, fStatus:'idle' }),
+      isSuccess: status === 'success',
+      showForm: status !== 'success',
+      isError: status === 'error',
+      isDuplicate: status === 'duplicate',
+      isSubmitting: submitting,
+      submitLabel: submitting ? 'Submitting…' : 'Book a demo',
+      submitStyle: 'width:100%;font:700 15px Manrope;color:#fff;background:' + (submitting ? '#6f86d8' : '#2453D4') + ';border:none;border-radius:8px;padding:14px;cursor:' + (submitting ? 'default' : 'pointer') + ';box-shadow:0 8px 20px rgba(36,83,212,.28)'
+    };
+  }
+
+  badge(tag, kind) {
+    const m = {
+      good: 'background:#E6F6EF;color:#0F9F6E',
+      warn: 'background:#FCEFDD;color:#D97706',
+      bad:  'background:#FBE9E9;color:#CB0000',
+      info: 'background:#EAF0FF;color:#2453D4',
+      navy: 'background:#EEF0FF;color:#212177',
+      plain:'background:#F1F5FB;color:#475569'
+    };
+    if (!tag) return 'display:none';
+    return 'font:700 10.5px Inter;border-radius:999px;padding:4px 10px;white-space:nowrap;flex-shrink:0;' + (m[kind] || m.plain);
+  }
+
+  _mountLogo(mark) {
+    if (!mark || mark.__wired) return;
+    mark.__wired = true;
+    const word = mark.querySelector('[data-word]');
+    const bars = Array.from(mark.querySelectorAll('[data-bar]'));
+    const all = [word, ...bars];
+    all.forEach((el) => { el.style.transition = 'transform .25s cubic-bezier(.22,.61,.36,1)'; });
+    const clamp = (v, m) => Math.max(-m, Math.min(m, v));
+    const win = mark.ownerDocument.defaultView || window;
+    win.addEventListener('mousemove', (e) => {
+      const r = mark.getBoundingClientRect();
+      const nx = (e.clientX - (r.left + r.width / 2)) / Math.max(r.width, 1);
+      const ny = (e.clientY - (r.top + r.height / 2)) / Math.max(r.height, 1);
+      const near = Math.abs(nx) < 2.4 && Math.abs(ny) < 6;
+      const k = near ? 1 : 0.3;
+      word.style.transitionDuration = '.14s';
+      word.style.transform = 'translate(' + clamp(nx * 7 * k, 4).toFixed(1) + 'px,' + clamp(ny * 5 * k, 3).toFixed(1) + 'px)';
+      bars.forEach((b, i) => {
+        const depth = (12 + i * 7) * k;
+        b.style.transitionDuration = '.14s';
+        b.style.transform = 'translate(' + clamp(nx * depth, 11).toFixed(1) + 'px,' + clamp(ny * 8 * k, 6).toFixed(1) + 'px)';
+      });
+    });
+    win.addEventListener('mouseleave', () => {
+      all.forEach((el) => { el.style.transitionDuration = '.5s'; el.style.transform = 'translate(0,0)'; });
+    });
+  }
+
+  renderVals() {
+    const S = this.state;
+
+    // ---- Journey stages ----
+    const stages = [
+      { label:'Enquiry', outcome:'Capture, assign, score, and prioritise every enquiry the moment it arrives.', head:'New enquiry',
+        bullets:['Web, WhatsApp, and walk-in capture','Auto-assignment by branch and counsellor','Lead scoring surfaces high-intent students'],
+        rows:[
+          {l:'Source', v:'Website form', tag:'Captured', s:'info'},
+          {l:'Programme interest', v:'MSc Data Science · UK', tag:'', s:'plain'},
+          {l:'Lead score', v:'82 — high intent', tag:'Priority', s:'good'},
+          {l:'Assigned to', v:'Aisha Khan', tag:'', s:'plain'},
+          {l:'Next action', v:'Intro call · today 4:00 PM', tag:'Due', s:'warn'} ]},
+      { label:'Counselling', outcome:'Preserve every conversation and always schedule the next action.', head:'Session 3',
+        bullets:['Full conversation history on the record','Next action and reminder never missed','Recommendations captured in context'],
+        rows:[
+          {l:'Last session', v:'Discussed UK vs. Canada', tag:'Logged', s:'navy'},
+          {l:'Concern raised', v:'Tuition affordability', tag:'', s:'plain'},
+          {l:'Recommendation', v:'2 UK programmes shortlisted', tag:'', s:'plain'},
+          {l:'Reminder', v:'Follow-up · Fri 11:00 AM', tag:'Set', s:'info'} ]},
+      { label:'Course selection', outcome:'Match students to the right programmes, intakes, and institutions.', head:'Shortlist · 4',
+        bullets:['Course Finder filters by country and intake','Compare fees, deadlines, and entry criteria','Shortlist shared with the student'],
+        rows:[
+          {l:'University of Leeds', v:'MSc Data Science · Sep 2026', tag:'Top pick', s:'good'},
+          {l:'University of Glasgow', v:'MSc Analytics · Sep 2026', tag:'Shortlisted', s:'navy'},
+          {l:'University of Surrey', v:'MSc Data Science · Jan 2027', tag:'Backup', s:'plain'},
+          {l:'Entry requirement', v:'IELTS 6.5 · met', tag:'OK', s:'good'} ]},
+      { label:'Application', outcome:'Track institutions, programmes, intakes, and status in one view.', head:'3 active',
+        bullets:['Every application with owner and deadline','Status from draft to offer','Nothing slips past an intake date'],
+        rows:[
+          {l:'University of Leeds', v:'Submitted · 12 May', tag:'In review', s:'info'},
+          {l:'University of Glasgow', v:'Offer received', tag:'Offer', s:'good'},
+          {l:'University of Surrey', v:'Draft — 1 field missing', tag:'Action', s:'warn'},
+          {l:'Earliest deadline', v:'30 June 2026', tag:'8 days', s:'warn'} ]},
+      { label:'Documents', outcome:'See exactly what is missing, rejected, verified, and versioned.', head:'9 of 12 ready',
+        bullets:['Readiness checklist per application','Versioned uploads with review status','Rejections flagged with a reason'],
+        rows:[
+          {l:'Passport', v:'Verified · v2', tag:'Verified', s:'good'},
+          {l:'IELTS scorecard', v:'Uploaded', tag:'In review', s:'info'},
+          {l:'Statement of purpose', v:'Not uploaded', tag:'Missing', s:'bad'},
+          {l:'Bank statement', v:'Rejected — illegible', tag:'Rejected', s:'bad'} ]},
+      { label:'Finance', outcome:'Connect student operations with fees, receipts, balances, and invoices.', head:'Invoice INV-2041',
+        bullets:['Fees, receipts, and balances on the record','Razorpay payments reconciled','Proformas and invoices in a click'],
+        rows:[
+          {l:'Service fee', v:'₹45,000', tag:'Invoiced', s:'navy'},
+          {l:'Paid', v:'₹30,000 · 2 receipts', tag:'Received', s:'good'},
+          {l:'Balance', v:'₹15,000', tag:'Due', s:'warn'},
+          {l:'Receipt', v:'RCPT-1183 issued', tag:'Sent', s:'info'} ]},
+      { label:'Visa', outcome:'Manage country checklists, filing stages, and decisions with clear ownership.', head:'UK Student · Priority',
+        bullets:['Country-specific visa checklists','Filing stage and ownership tracked','Outcomes recorded against the record'],
+        rows:[
+          {l:'CAS', v:'Received from Leeds', tag:'Verified', s:'good'},
+          {l:'Financial documents', v:'Bank statement pending', tag:'Blocked', s:'bad'},
+          {l:'Biometrics', v:'Appointment · 5 July', tag:'Booked', s:'info'},
+          {l:'Decision', v:'Awaiting submission', tag:'In progress', s:'warn'} ]},
+      { label:'Enrollment', outcome:'Confirm the enrolment and close the loop with a measurable outcome.', head:'Fall 2026',
+        bullets:['Final enrolment confirmed on the record','Outcome rolls up to owner reporting','One complete journey, end to end'],
+        rows:[
+          {l:'Institution', v:'University of Leeds', tag:'Confirmed', s:'good'},
+          {l:'Programme', v:'MSc Data Science', tag:'', s:'plain'},
+          {l:'Status', v:'Enrolled · Sep 2026', tag:'Enrolled', s:'good'},
+          {l:'Outcome', v:'Counted in conversion report', tag:'Closed', s:'navy'} ]}
+    ];
+    const stagesNav = stages.map((st, i) => {
+      const on = i === S.stage;
+      return {
+        num: i + 1, label: st.label,
+        onSelect: () => this.setState({ stage: i }),
+        btnStyle: 'display:flex;align-items:center;gap:9px;background:' + (on ? '#0B1230' : '#fff') + ';border:1px solid ' + (on ? '#0B1230' : '#E4EAF3') + ';color:' + (on ? '#fff' : '#475569') + ';border-radius:10px;padding:10px 14px;margin-right:8px;cursor:pointer;flex-shrink:0;transition:all .18s',
+        numStyle: 'width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 11px Manrope;background:' + (on ? '#2453D4' : '#EEF2F8') + ';color:' + (on ? '#fff' : '#94a3b8')
+      };
+    });
+    const a = stages[S.stage];
+    const active = {
+      num: S.stage + 1, label: a.label, head: a.head, outcome: a.outcome, bullets: a.bullets,
+      rows: a.rows.map(r => ({ l:r.l, v:r.v, tag:r.tag, badgeStyle: this.badge(r.tag, r.s) }))
+    };
+
+    // ---- Teams ----
+    const teams = [
+      { label:'Owners', headline:'See the whole consultancy in one operating view', intro:'Visibility across teams, branches, pipelines, conversion, revenue, and risk — without chasing updates.',
+        points:['Conversion and revenue across every branch','Outstanding work and risk surfaced daily','Role-based access keeps data scoped'],
+        panelTitle:'Owner dashboard · all branches', rows:[
+          {l:'Pipeline value · this intake', tag:'₹1.4 Cr', s:'navy'},
+          {l:'Conversion rate', tag:'31%', s:'good'},
+          {l:'Applications at risk', tag:'4', s:'warn'},
+          {l:'Visas filed this month', tag:'58', s:'info'} ]},
+      { label:'Counsellors', headline:'Know whom to contact, what to discuss, and what to do next', intro:'Assigned leads, full conversation history, reminders, and recommendations in one place.',
+        points:['Today\u2019s follow-ups, prioritised','Conversation history on every record','Course recommendations in context'],
+        panelTitle:'My day · 14 follow-ups', rows:[
+          {l:'Priya Sharma · intro call', tag:'4:00 PM', s:'warn'},
+          {l:'Arjun Kapoor · send shortlist', tag:'Today', s:'info'},
+          {l:'Meera Nair · offer decision', tag:'Overdue', s:'bad'},
+          {l:'New leads assigned', tag:'5', s:'good'} ]},
+      { label:'Admissions', headline:'Move every application forward without losing context', intro:'Structured applications, document readiness, deadlines, and progress in a single board.',
+        points:['Applications by status and intake','Document readiness per file','Deadline alerts before they bite'],
+        panelTitle:'Applications · 37 active', rows:[
+          {l:'Ready to submit', tag:'12', s:'good'},
+          {l:'Awaiting documents', tag:'9', s:'warn'},
+          {l:'In university review', tag:'14', s:'info'},
+          {l:'Offers received', tag:'2', s:'good'} ]},
+      { label:'Visa', headline:'Manage visa work with clear ownership and fewer misses', intro:'Country-specific workflows, checklists, document status, and outcome tracking.',
+        points:['Checklists by destination country','Filing stage and owner per case','Outcomes recorded for reporting'],
+        panelTitle:'Visa cases · UK · Canada · Australia', rows:[
+          {l:'Documents complete', tag:'21', s:'good'},
+          {l:'Awaiting financials', tag:'6', s:'warn'},
+          {l:'Filed · awaiting decision', tag:'11', s:'info'},
+          {l:'Approved this month', tag:'17', s:'good'} ]},
+      { label:'Finance', headline:'Connect student operations with financial status', intro:'Fee records, payment history, receipts, proformas, taxes, and balances — reconciled.',
+        points:['Fees and balances on each record','Razorpay payments auto-matched','Receipts and invoices on demand'],
+        panelTitle:'Finance · this month', rows:[
+          {l:'Collected', tag:'₹38.6 L', s:'good'},
+          {l:'Outstanding balance', tag:'₹9.2 L', s:'warn'},
+          {l:'Receipts issued', tag:'142', s:'info'},
+          {l:'Refunds pending', tag:'1', s:'bad'} ]},
+      { label:'Partner teams', headline:'Scale a partner network without surrendering control', intro:'Partner onboarding, lead ownership, agreements, resources, courses, and commissions.',
+        points:['Sub-agent onboarding and access control','Clear lead ownership and compliance','Commission tracking per partner'],
+        panelTitle:'Partner Hub · 23 active partners', rows:[
+          {l:'Leads from partners', tag:'186', s:'navy'},
+          {l:'Pending agreements', tag:'3', s:'warn'},
+          {l:'Commission payable', tag:'₹4.1 L', s:'info'},
+          {l:'Top partner conversion', tag:'34%', s:'good'} ]}
+    ];
+    const teamsNav = teams.map((t, i) => {
+      const on = i === S.team;
+      return { label:t.label, onSelect:() => this.setState({ team:i }),
+        tabStyle:'font:700 14px Manrope;background:' + (on ? '#212177' : '#fff') + ';color:' + (on ? '#fff' : '#475569') + ';border:1px solid ' + (on ? '#212177' : '#E4EAF3') + ';border-radius:9px;padding:10px 18px;cursor:pointer;transition:all .15s' };
+    });
+    const t = teams[S.team];
+    const teamActive = { headline:t.headline, intro:t.intro, points:t.points, panelTitle:t.panelTitle,
+      rows:t.rows.map(r => ({ l:r.l, tag:r.tag, badgeStyle:this.badge(r.tag, r.s) })) };
+
+    // ---- Platform modules ----
+    const icon = (g, c) => ({ icon:g, iconStyle:'display:flex;width:42px;height:42px;border-radius:10px;align-items:center;justify-content:center;font:700 17px Manrope;background:' + c[0] + ';color:' + c[1] });
+    const platform = [
+      { title:'Lead & pipeline management', desc:'Capture from every channel, score intent, and move enquiries through a pipeline built for education.', ...icon('LP', ['#EAF0FF','#2453D4']) },
+      { title:'Counselling & follow-ups', desc:'Conversation history, reminders, and next actions so no student waits and no context is lost.', ...icon('CF', ['#EEF0FF','#212177']) },
+      { title:'Admissions & applications', desc:'Track institutions, programmes, intakes, and status from draft through to offer.', ...icon('AA', ['#E6F6EF','#0F9F6E']) },
+      { title:'Document management', desc:'Readiness checklists, versioned uploads, and clear missing, rejected, and verified states.', ...icon('DM', ['#FBE9E9','#CB0000']) },
+      { title:'Course Finder', desc:'Filter programmes by country, intake, fees, and entry criteria, then shortlist in seconds.', ...icon('CF', ['#FCEFDD','#D97706']) },
+      { title:'Visa & visitor visa', desc:'Country-specific checklists, filing stages, and outcome tracking with clear ownership.', ...icon('VV', ['#EAF0FF','#2453D4']) },
+      { title:'Partner Hub', desc:'Onboard sub-agents, control access, manage agreements, and track commissions.', ...icon('PH', ['#EEF0FF','#212177']) },
+      { title:'Finance', desc:'Fees, receipts, balances, invoices, and Razorpay payments reconciled to the record.', ...icon('FN', ['#E6F6EF','#0F9F6E']) },
+      { title:'Reports & automation', desc:'Dashboards, conversion reporting, and automated routing, notifications, and communication.', ...icon('RA', ['#FCEFDD','#D97706']) }
+    ];
+
+    // ---- AI actions ----
+    const aiActions = ['Lead scoring','Suggested next actions','Missing-document alerts','Student record summaries','Follow-up message drafts','Application risk signals'];
+
+    // ---- Before / After ----
+    const beforeItems = ['Leads scattered across inboxes, forms, and WhatsApp','Application status lives in one person\u2019s memory','Documents chased over email, versions lost','Fees and balances tracked in a separate sheet','Owners can\u2019t see conversion across branches'];
+    const afterItems = ['Every enquiry captured and assigned automatically','One student record every team can trust','Document readiness visible at a glance','Fees, receipts, and balances on the record','Live conversion and risk across the network'];
+
+    // ---- Integrations ----
+    const integ = (name, ab, desc, tag, kind) => ({ name, ab, desc, tag, tagStyle:'position:absolute;top:16px;right:14px;font:700 9.5px Inter;border-radius:999px;padding:3px 8px;' + (kind === 'soon' ? 'background:#F1F5FB;color:#94a3b8' : 'background:#E6F6EF;color:#0F9F6E') });
+    const integrations = [
+      integ('Email','@','Two-way email on the record','Active','live'),
+      integ('WhatsApp','W','Capture and reply in context','Active','live'),
+      integ('Website forms','WF','Enquiries straight into the pipeline','Active','live'),
+      integ('Razorpay','R','Collect fees and reconcile','Active','live'),
+      integ('Lead assignment','LA','Auto-route by branch and rule','Active','live'),
+      integ('Notifications','N','Alerts for owners and teams','Active','live'),
+      integ('Imports & exports','IE','Bring data in, take it out','Active','live'),
+      integ('API & webhooks','API','Build your own connections','Coming soon','soon')
+    ];
+
+    // ---- Security ----
+    const sec = (ab, title, desc) => ({ ab, title, desc });
+    const securityPoints = [
+      sec('WS','Isolated workspaces','Each company\u2019s records and documents are scoped to its own workspace.'),
+      sec('RB','Role-based access','Staff see only what their role allows — down to assigned leads.'),
+      sec('PD','Private document storage','Files are stored privately and access is workspace-scoped.'),
+      sec('SE','Secure sessions','Browser sessions are hashed, expiring, and revocable.'),
+      sec('AL','Audit logs','Important actions are recorded and reviewable.'),
+      sec('SA','Bounded support access','Platform support access is reason-bound, time-limited, and audited.')
+    ];
+
+    // ---- Migration ----
+    const migration = [
+      { n:'01', title:'Import existing data', desc:'Bring spreadsheets or another CRM with guided mapping and validation.' },
+      { n:'02', title:'Configure the workspace', desc:'Set branches, teams, pipelines, and roles to match how you operate.' },
+      { n:'03', title:'Invite the team', desc:'Add counsellors, admissions, finance, and partners with the right access.' },
+      { n:'04', title:'Launch operations', desc:'Start working from one shared, accountable student record.' }
+    ];
+
+    // ---- Pricing ----
+    const annual = S.annual;
+    const planData = [
+      { name:'Starter', who:'Single-branch consultancies getting organised.', m:'₹2,999', a:'₹2,399', featured:false,
+        features:['Up to 3 seats','Leads, counselling & pipeline','Applications & documents','Course Finder','Email support'] },
+      { name:'Growth', who:'Growing teams running applications and visas at scale.', m:'₹6,999', a:'₹5,599', featured:true,
+        features:['Up to 12 seats','Everything in Starter','Visa & visitor visa workflows','Finance & Razorpay','AI Command Centre','Priority support'] },
+      { name:'Pro', who:'Multi-branch networks with partners and academies.', m:'Talk to sales', a:'Talk to sales', featured:false,
+        features:['Unlimited seats & branches','Everything in Growth','Partner Hub & commissions','Academy management','API & webhooks','Onboarding manager'] }
+    ];
+    const plans = planData.map(p => {
+      const f = p.featured;
+      const talk = p.m === 'Talk to sales';
+      return {
+        name:p.name, who:p.who, featured:f, features:p.features,
+        price: talk ? 'Talk to sales' : (annual ? p.a : p.m),
+        unit: talk ? '' : '/ seat / mo',
+        billNote: talk ? 'Custom pricing for your network' : (annual ? 'billed annually, per seat' : 'billed monthly, per seat'),
+        cta: talk ? 'Talk to sales' : 'Book a demo',
+        titleColor: f ? '#fff' : '#0B1230',
+        subColor: f ? '#aab4d6' : '#94a3b8',
+        priceColor: f ? '#fff' : '#0B1230',
+        featColor: f ? '#dfe5f4' : '#334155',
+        checkColor: f ? '#5fd0a6' : '#0F9F6E',
+        divColor: f ? 'rgba(255,255,255,.12)' : '#EEF2F8',
+        cardStyle: 'position:relative;border-radius:14px;padding:30px;' + (f
+          ? 'background:#0B1230;border:1px solid #0B1230;box-shadow:0 30px 60px -30px rgba(11,18,48,.5)'
+          : 'background:#fff;border:1px solid #E9EEF6'),
+        ctaStyle: 'display:block;text-align:center;text-decoration:none;font:700 14.5px Manrope;border-radius:8px;padding:13px;' + (f
+          ? 'background:#2453D4;color:#fff'
+          : (talk ? 'background:#fff;color:#212177;border:1px solid #DCE3EE' : 'background:#212177;color:#fff'))
+      };
+    });
+    const segBtn = (on) => 'font:700 13.5px Manrope;border:none;border-radius:7px;padding:9px 18px;cursor:pointer;background:' + (on ? '#fff' : 'transparent') + ';color:' + (on ? '#0B1230' : '#64748B') + ';box-shadow:' + (on ? '0 1px 4px rgba(11,18,48,.12)' : 'none');
+
+    // ---- FAQ ----
+    const faqData = [
+      { q:'Is each company\u2019s data kept separate?', a:'Yes. Every company operates in its own isolated workspace. Records and documents are scoped to that workspace and are never shared across customers.' },
+      { q:'Who can see our workspace?', a:'Only the people you invite. Access is role-based, and platform support access is reason-bound, time-limited, read-only, and recorded in an audit log.' },
+      { q:'Can staff access only their assigned leads?', a:'Yes. Roles and permissions let you limit counsellors to assigned leads while owners and admins keep the wider view.' },
+      { q:'Can we import spreadsheets or another CRM?', a:'Yes. Guided import maps your existing spreadsheets or CRM data into adMYTT, with validation before anything goes live.' },
+      { q:'Does adMYTT support multiple branches and partners?', a:'Yes. Multi-branch operations, sub-agents, and partners are first-class — with their own access, ownership, and commission tracking.' },
+      { q:'Can we export our data, and what happens if we cancel?', a:'Your data stays yours and remains exportable. If a subscription ends, you can export your records before access closes, per the data retention policy.' }
+    ];
+    const faqs = faqData.map((f, i) => {
+      const on = i === S.faqOpen;
+      return { q:f.q, a:f.a, isOpen:on, onToggle:() => this.setState({ faqOpen: on ? -1 : i }),
+        iconStyle:'flex-shrink:0;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font:400 22px Inter;background:' + (on ? '#212177' : '#F1F5FB') + ';color:' + (on ? '#fff' : '#94a3b8') + ';transform:rotate(' + (on ? '45' : '0') + 'deg);transition:all .2s' };
+    });
+
+    return {
+      menuOpen: S.menuOpen,
+      logoRef: (el) => this._mountLogo(el),
+      toggleMenu: () => this.setState({ menuOpen: !S.menuOpen }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      stagesNav, active, teamsNav, teamActive, platform, aiActions,
+      beforeItems, afterItems, integrations, securityPoints, migration,
+      plans, faqs,
+      setMonthly: () => this.setState({ annual: false }),
+      setAnnual: () => this.setState({ annual: true }),
+      monthlyStyle: segBtn(!annual), annualStyle: segBtn(annual),
+      ...this.renderVals_form()
+    };
+  }
+}
+</script>
+</body>
+</html>
