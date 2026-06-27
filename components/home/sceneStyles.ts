@@ -20,7 +20,7 @@ export const onLight: CSSProperties = {
   borderRadius: 7,
   border: "1px solid #E4EAF3",
   background: "#fff",
-  color: "#0B1230",
+  color: "#0F172A",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",

@@ -39,7 +39,7 @@ export default function Footer() {
           </div>
           {columns.map((c) => (
             <div key={c.title}>
-              <div style={{ font: "700 13px var(--font-manrope)", color: "#fff", marginBottom: 14 }}>{c.title}</div>
+              <div style={{ font: "700 13px var(--font-inter)", color: "#fff", marginBottom: 14 }}>{c.title}</div>
               <div style={{ display: "flex", flexDirection: "column", gap: 10, font: "400 13.5px var(--font-inter)" }}>
                 {c.links.map((l) =>
                   l.href.startsWith("http") ? (

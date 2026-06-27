@@ -24,7 +24,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const baseInput: React.CSSProperties = {
   width: "100%",
   font: "400 14.5px var(--font-inter)",
-  color: "#0B1230",
+  color: "#0F172A",
   background: "#fff",
   border: "1px solid #DCE3EE",
   borderRadius: 8,
@@ -33,7 +33,7 @@ const baseInput: React.CSSProperties = {
   transition: "border-color .15s,box-shadow .15s",
   WebkitAppearance: "none",
 };
-const badInput: React.CSSProperties = { ...baseInput, background: "#FEF6F6", border: "1px solid #CB0000" };
+const badInput: React.CSSProperties = { ...baseInput, background: "#FEF6F6", border: "1px solid #B91C1C" };
 
 function validate(f: FormState): Errors {
   const e: Errors = {};
@@ -119,15 +119,15 @@ export default function DemoForm() {
 
   const submitting = status === "submitting";
   const labelStyle: React.CSSProperties = { display: "block", font: "600 13px var(--font-inter)", color: "#334155", marginBottom: 6 };
-  const errStyle: React.CSSProperties = { font: "500 12px var(--font-inter)", color: "#CB0000", marginTop: 5 };
+  const errStyle: React.CSSProperties = { font: "500 12px var(--font-inter)", color: "#B91C1C", marginTop: 5 };
   const st = (k: keyof FormState) => (errors[k] ? badInput : baseInput);
 
   return (
     <div style={{ background: "#fff", borderRadius: 16, padding: 30, boxShadow: "0 34px 80px -34px rgba(0,0,0,.6)" }}>
       {status === "success" ? (
         <div style={{ textAlign: "center", padding: "26px 6px" }}>
-          <div style={{ width: 58, height: 58, margin: "0 auto 18px", borderRadius: "50%", background: "#E6F6EF", display: "flex", alignItems: "center", justifyContent: "center", font: "700 27px var(--font-manrope)", color: "#0F9F6E" }}>✓</div>
-          <div style={{ font: "800 23px var(--font-manrope)", color: "#0B1230", marginBottom: 9 }}>Request received</div>
+          <div style={{ width: 58, height: 58, margin: "0 auto 18px", borderRadius: "50%", background: "#E6F6EF", display: "flex", alignItems: "center", justifyContent: "center", font: "700 27px var(--font-inter)", color: "#0F9F6E" }}>✓</div>
+          <div style={{ font: "800 23px var(--font-inter)", color: "#0F172A", marginBottom: 9 }}>Request received</div>
           <p style={{ font: "400 15px/23px var(--font-inter)", color: "#475569", maxWidth: 340, margin: "0 auto 22px" }}>
             Thanks — a product specialist will reply within one business day to schedule your demo. A confirmation is on its way to your work email.
           </p>
@@ -139,14 +139,14 @@ export default function DemoForm() {
               setStatus("idle");
               startedRef.current = false;
             }}
-            style={{ font: "700 14px var(--font-manrope)", color: "#212177", background: "#fff", border: "1px solid #DCE3EE", borderRadius: 8, padding: "11px 20px", cursor: "pointer" }}
+            style={{ font: "700 14px var(--font-inter)", color: "#4F46E5", background: "#fff", border: "1px solid #DCE3EE", borderRadius: 8, padding: "11px 20px", cursor: "pointer" }}
           >
             Book another demo
           </button>
         </div>
       ) : (
         <form onSubmit={onSubmit} noValidate>
-          <div style={{ font: "800 20px var(--font-manrope)", color: "#0B1230", marginBottom: 4 }}>Book a demo</div>
+          <div style={{ font: "800 20px var(--font-inter)", color: "#0F172A", marginBottom: 4 }}>Book a demo</div>
           <div style={{ font: "400 13.5px var(--font-inter)", color: "#64748B", marginBottom: 20 }}>Fields marked * are required.</div>
 
           {status === "error" && (
@@ -233,7 +233,7 @@ export default function DemoForm() {
             />
 
             <label htmlFor="df-consent" style={{ display: "flex", alignItems: "flex-start", gap: 10, cursor: "pointer" }}>
-              <input id="df-consent" type="checkbox" checked={f.consent} onChange={(e) => set("consent", e.target.checked)} aria-invalid={!!errors.consent} style={{ width: 17, height: 17, marginTop: 2, accentColor: "#2453D4", flexShrink: 0 }} />
+              <input id="df-consent" type="checkbox" checked={f.consent} onChange={(e) => set("consent", e.target.checked)} aria-invalid={!!errors.consent} style={{ width: 17, height: 17, marginTop: 2, accentColor: "#4F46E5", flexShrink: 0 }} />
               <span style={{ font: "400 12.5px/18px var(--font-inter)", color: "#64748B" }}>
                 I agree to be contacted about my demo request. adMYTT will not share my details, and I can opt out at any time.
               </span>
@@ -245,14 +245,14 @@ export default function DemoForm() {
               disabled={submitting}
               style={{
                 width: "100%",
-                font: "700 15px var(--font-manrope)",
+                font: "700 15px var(--font-inter)",
                 color: "#fff",
-                background: submitting ? "#6f86d8" : "#2453D4",
+                background: submitting ? "#6f86d8" : "#4F46E5",
                 border: "none",
                 borderRadius: 8,
                 padding: 14,
                 cursor: submitting ? "default" : "pointer",
-                boxShadow: "0 8px 20px rgba(36,83,212,.28)",
+                boxShadow: "0 8px 20px rgba(79,70,229,.28)",
               }}
             >
               {submitting ? "Submitting…" : "Book a demo"}

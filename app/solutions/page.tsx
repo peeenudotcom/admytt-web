@@ -85,20 +85,20 @@ export default function SolutionsPage() {
       />
 
       {solutions.map((s, idx) => (
-        <Band key={s.id} id={s.id} bg={idx % 2 === 0 ? "#fff" : "#F6F8FC"} border={idx !== 0}>
+        <Band key={s.id} id={s.id} bg={idx % 2 === 0 ? "#fff" : "#F8FAFC"} border={idx !== 0}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }} data-teamview="1">
             <div>
-              <div style={{ font: "700 13px var(--font-inter)", color: "#2453D4", marginBottom: 12 }}>{s.audience}</div>
+              <div style={{ font: "700 13px var(--font-inter)", color: "#4F46E5", marginBottom: 12 }}>{s.audience}</div>
               <SectionHeading title={s.headline} lead={s.intro} />
               <CheckList items={s.points} />
             </div>
             <div style={{ background: "#fff", border: "1px solid #E4EAF3", borderRadius: 12, overflow: "hidden", boxShadow: "0 22px 46px -28px rgba(11,18,48,.3)" }}>
-              <div style={{ background: "#0B1230", padding: "12px 16px", font: "700 12.5px var(--font-manrope)", color: "#fff" }}>{s.panelTitle}</div>
+              <div style={{ background: "#0F172A", padding: "12px 16px", font: "700 12.5px var(--font-inter)", color: "#fff" }}>{s.panelTitle}</div>
               <div style={{ padding: 16, display: "flex", flexDirection: "column", gap: 9 }}>
                 {s.panelRows.map((r) => (
                   <div key={r.l} style={{ display: "flex", alignItems: "center", gap: 12, border: "1px solid #EAEFF7", borderRadius: 9, padding: "12px 14px" }}>
                     <span style={{ font: "500 13px var(--font-inter)", color: "#64748B", flex: 1 }}>{r.l}</span>
-                    <span style={{ font: "700 13px var(--font-inter)", color: "#0B1230" }}>{r.v}</span>
+                    <span style={{ font: "700 13px var(--font-inter)", color: "#0F172A" }}>{r.v}</span>
                   </div>
                 ))}
                 <div style={{ font: "600 9.5px var(--font-inter)", color: "#64748B", background: "#F1F5FB", borderRadius: 5, padding: "3px 8px", alignSelf: "flex-start" }}>Demo data</div>

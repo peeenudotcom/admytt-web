@@ -23,8 +23,8 @@ export default function JourneyRail() {
     <section id="platform" style={{ background: "#fff", borderTop: "1px solid #EEF2F8", padding: "92px 0" }}>
       <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 28px" }}>
         <div style={{ maxWidth: 680, marginBottom: 40 }}>
-          <div style={{ font: "700 13px var(--font-inter)", color: "#2453D4", marginBottom: 12 }}>One connected operating flow</div>
-          <h2 data-h2 style={{ font: "800 38px/45px var(--font-manrope)", letterSpacing: "-.02em", color: "#0B1230", marginBottom: 14 }}>Follow one student record across every team</h2>
+          <div style={{ font: "700 13px var(--font-inter)", color: "#4F46E5", marginBottom: 12 }}>One connected operating flow</div>
+          <h2 data-h2 style={{ font: "800 38px/45px var(--font-inter)", letterSpacing: "-.02em", color: "#0F172A", marginBottom: 14 }}>Follow one student record across every team</h2>
           <p style={{ font: "400 18px/28px var(--font-inter)", color: "#475569" }}>From the first enquiry to a confirmed enrolment, every stage stays on the same record. Select a stage to see exactly what your team works on.</p>
         </div>
 
@@ -39,10 +39,10 @@ export default function JourneyRail() {
                   selectStage(i);
                   track("product_stage_viewed", { stage: st.label });
                 }}
-                style={{ display: "flex", alignItems: "center", gap: 9, background: on ? "#0B1230" : "#fff", border: `1px solid ${on ? "#0B1230" : "#E4EAF3"}`, color: on ? "#fff" : "#475569", borderRadius: 10, padding: "10px 14px", marginRight: 8, cursor: "pointer", flexShrink: 0, transition: "all .18s" }}
+                style={{ display: "flex", alignItems: "center", gap: 9, background: on ? "#0F172A" : "#fff", border: `1px solid ${on ? "#0F172A" : "#E4EAF3"}`, color: on ? "#fff" : "#475569", borderRadius: 10, padding: "10px 14px", marginRight: 8, cursor: "pointer", flexShrink: 0, transition: "all .18s" }}
               >
-                <span style={{ width: 22, height: 22, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", font: "700 11px var(--font-manrope)", background: on ? "#2453D4" : "#EEF2F8", color: on ? "#fff" : "#94a3b8" }}>{i + 1}</span>
-                <span style={{ font: "700 13px var(--font-manrope)", whiteSpace: "nowrap" }}>{st.label}</span>
+                <span style={{ width: 22, height: 22, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", font: "700 11px var(--font-inter)", background: on ? "#4F46E5" : "#EEF2F8", color: on ? "#fff" : "#94a3b8" }}>{i + 1}</span>
+                <span style={{ font: "700 13px var(--font-inter)", whiteSpace: "nowrap" }}>{st.label}</span>
               </button>
             );
           })}
@@ -57,17 +57,17 @@ export default function JourneyRail() {
           <button aria-pressed={playing} aria-label={playing ? "Pause journey tour" : "Play journey tour"} onClick={() => { toggle(); track("product_tour_started"); }} style={onLight}>{playing ? "❚❚" : "▶"}</button>
           <button aria-label="Replay journey tour" onClick={replay} style={onLight}>↻</button>
           <div style={{ flex: 1, minWidth: 120, height: 5, borderRadius: 999, background: "#EEF2F8", overflow: "hidden" }}>
-            <div ref={progRef} style={{ height: "100%", width: 0, background: "#2453D4", transition: "width .12s linear" }} />
+            <div ref={progRef} style={{ height: "100%", width: 0, background: "#4F46E5", transition: "width .12s linear" }} />
           </div>
           <span style={{ font: "700 12px var(--font-inter)", color: "#64748B", whiteSpace: "nowrap" }}>Stage {stage + 1} of 8</span>
         </div>
 
         <div ref={sceneRef} onMouseEnter={onEnter} onMouseLeave={onLeave} onFocusCapture={onEnter} onBlurCapture={onLeave} style={{ display: "grid", gridTemplateColumns: ".82fr 1.18fr", gap: 28, alignItems: "stretch" }} data-journey="1">
           {/* outcome */}
-          <div style={{ background: "#0B1230", borderRadius: 14, padding: 32, display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: 360 }}>
+          <div style={{ background: "#0F172A", borderRadius: 14, padding: 32, display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: 360 }}>
             <div>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,.08)", borderRadius: 999, padding: "6px 13px", font: "700 12px var(--font-inter)", color: "#cdd6ee", marginBottom: 22 }}>Stage {stage + 1} of 8 · {a.label}</div>
-              <p style={{ font: "700 26px/34px var(--font-manrope)", color: "#fff", letterSpacing: "-.01em" }}>{a.outcome}</p>
+              <p style={{ font: "700 26px/34px var(--font-inter)", color: "#fff", letterSpacing: "-.01em" }}>{a.outcome}</p>
             </div>
             <div style={{ marginTop: 26, display: "flex", flexDirection: "column", gap: 11 }}>
               {a.bullets.map((b) => (
@@ -80,11 +80,11 @@ export default function JourneyRail() {
           </div>
 
           {/* product panel */}
-          <div style={{ background: "#F6F8FC", border: "1px solid #E4EAF3", borderRadius: 14, overflow: "hidden", boxShadow: "0 24px 50px -28px rgba(11,18,48,.3)" }}>
+          <div style={{ background: "#F8FAFC", border: "1px solid #E4EAF3", borderRadius: 14, overflow: "hidden", boxShadow: "0 24px 50px -28px rgba(11,18,48,.3)" }}>
             <div style={{ height: 48, background: "#fff", borderBottom: "1px solid #EEF2F8", display: "flex", alignItems: "center", gap: 11, padding: "0 18px" }}>
-              <span style={{ width: 32, height: 32, borderRadius: "50%", background: "#EEF0FF", color: "#212177", font: "700 12px var(--font-manrope)", display: "flex", alignItems: "center", justifyContent: "center" }}>PS</span>
+              <span style={{ width: 32, height: 32, borderRadius: "50%", background: "#EEF2FF", color: "#4F46E5", font: "700 12px var(--font-inter)", display: "flex", alignItems: "center", justifyContent: "center" }}>PS</span>
               <div>
-                <div style={{ font: "700 13px var(--font-manrope)", color: "#0B1230" }}>Priya Sharma</div>
+                <div style={{ font: "700 13px var(--font-inter)", color: "#0F172A" }}>Priya Sharma</div>
                 <div style={{ font: "500 11px var(--font-inter)", color: "#94a3b8" }}>UK · Fall 2026 · #STU-2041</div>
               </div>
               <span style={{ marginLeft: "auto", font: "700 11px var(--font-inter)", color: "#475569", background: "#F1F5FB", borderRadius: 7, padding: "5px 11px" }}>{a.head}</span>
@@ -101,7 +101,7 @@ export default function JourneyRail() {
                   return (
                     <div key={r.l} style={rowStyle}>
                       <span style={{ font: "500 13px var(--font-inter)", color: "#64748B", width: 150, flexShrink: 0 }}>{r.l}</span>
-                      <span style={{ font: "600 13.5px var(--font-inter)", color: "#0B1230", flex: 1 }}>{v}</span>
+                      <span style={{ font: "600 13.5px var(--font-inter)", color: "#0F172A", flex: 1 }}>{v}</span>
                       <span style={badgeStyle(s)}>{tag}</span>
                     </div>
                   );

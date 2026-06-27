@@ -10,7 +10,7 @@ export default function LegalNotice() {
 export function LegalSection({ heading, children }: { heading: string; children: React.ReactNode }) {
   return (
     <section style={{ marginBottom: 28 }}>
-      <h2 style={{ font: "700 20px/28px var(--font-manrope)", color: "#0B1230", marginBottom: 10 }}>{heading}</h2>
+      <h2 style={{ font: "700 20px/28px var(--font-inter)", color: "#0F172A", marginBottom: 10 }}>{heading}</h2>
       <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>{children}</div>
     </section>
   );

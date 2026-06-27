@@ -31,13 +31,13 @@ export default function ContactPage() {
         <SectionHeading title="How to reach us" />
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 18 }} data-platform="1">
           {channels.map((c) => (
-            <div key={c.title} style={{ background: "#F6F8FC", border: "1px solid #E9EEF6", borderRadius: 13, padding: 26 }}>
-              <div style={{ font: "700 18px var(--font-manrope)", color: "#0B1230", marginBottom: 8 }}>{c.title}</div>
+            <div key={c.title} style={{ background: "#F8FAFC", border: "1px solid #E9EEF6", borderRadius: 13, padding: 26 }}>
+              <div style={{ font: "700 18px var(--font-inter)", color: "#0F172A", marginBottom: 8 }}>{c.title}</div>
               <div style={{ font: "400 15px/23px var(--font-inter)", color: "#64748B", marginBottom: 16 }}>{c.desc}</div>
               {c.action.href.startsWith("/") ? (
-                <Link href={c.action.href} style={{ font: "700 14.5px var(--font-manrope)", color: "#212177", textDecoration: "none" }}>{c.action.label} →</Link>
+                <Link href={c.action.href} style={{ font: "700 14.5px var(--font-inter)", color: "#4F46E5", textDecoration: "none" }}>{c.action.label} →</Link>
               ) : (
-                <a href={c.action.href} style={{ font: "700 14.5px var(--font-manrope)", color: "#212177", textDecoration: "none" }}>{c.action.label} →</a>
+                <a href={c.action.href} style={{ font: "700 14.5px var(--font-inter)", color: "#4F46E5", textDecoration: "none" }}>{c.action.label} →</a>
               )}
             </div>
           ))}

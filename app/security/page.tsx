@@ -41,21 +41,21 @@ export default function SecurityPage() {
         <SectionHeading eyebrow="Controls we operate" title="Protections, described accurately" />
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }} data-platform="1">
           {securityPoints.map((s) => (
-            <div key={s.title} style={{ background: "#F6F8FC", border: "1px solid #E9EEF6", borderRadius: 12, padding: 22 }}>
-              <span style={{ width: 34, height: 34, borderRadius: 9, background: "#EEF0FF", color: "#212177", display: "flex", alignItems: "center", justifyContent: "center", font: "700 13px var(--font-manrope)" }}>{s.ab}</span>
-              <div style={{ font: "700 15px var(--font-manrope)", color: "#0B1230", margin: "13px 0 6px" }}>{s.title}</div>
+            <div key={s.title} style={{ background: "#F8FAFC", border: "1px solid #E9EEF6", borderRadius: 12, padding: 22 }}>
+              <span style={{ width: 34, height: 34, borderRadius: 9, background: "#EEF2FF", color: "#4F46E5", display: "flex", alignItems: "center", justifyContent: "center", font: "700 13px var(--font-inter)" }}>{s.ab}</span>
+              <div style={{ font: "700 15px var(--font-inter)", color: "#0F172A", margin: "13px 0 6px" }}>{s.title}</div>
               <div style={{ font: "400 13.5px/20px var(--font-inter)", color: "#64748B" }}>{s.desc}</div>
             </div>
           ))}
         </div>
       </Band>
 
-      <Band bg="#F6F8FC">
+      <Band bg="#F8FAFC">
         <SectionHeading title="How each control works" />
         <div style={{ display: "flex", flexDirection: "column", gap: 14, maxWidth: 880 }}>
           {detailSections.map((d) => (
             <div key={d.id} id={d.id} style={{ scrollMarginTop: 90, background: "#fff", border: "1px solid #E9EEF6", borderRadius: 12, padding: "24px 26px" }}>
-              <div style={{ font: "700 18px var(--font-manrope)", color: "#0B1230", marginBottom: 8 }}>{d.title}</div>
+              <div style={{ font: "700 18px var(--font-inter)", color: "#0F172A", marginBottom: 8 }}>{d.title}</div>
               <div style={{ font: "400 15.5px/24px var(--font-inter)", color: "#475569" }}>{d.body}</div>
             </div>
           ))}
@@ -69,8 +69,8 @@ export default function SecurityPage() {
         <SectionHeading title="Security FAQ" />
         <div style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: 880 }}>
           {securityFaqs.map((f) => (
-            <div key={f.q} style={{ background: "#F6F8FC", border: "1px solid #E9EEF6", borderRadius: 11, padding: "20px 22px" }}>
-              <div style={{ font: "700 16px var(--font-manrope)", color: "#0B1230", marginBottom: 8 }}>{f.q}</div>
+            <div key={f.q} style={{ background: "#F8FAFC", border: "1px solid #E9EEF6", borderRadius: 11, padding: "20px 22px" }}>
+              <div style={{ font: "700 16px var(--font-inter)", color: "#0F172A", marginBottom: 8 }}>{f.q}</div>
               <div style={{ font: "400 15px/24px var(--font-inter)", color: "#475569" }}>{f.a}</div>
             </div>
           ))}

@@ -38,12 +38,12 @@ export default function PricingPage() {
 
       <Pricing withHeading={false} />
 
-      <Band bg="#F6F8FC">
+      <Band bg="#F8FAFC">
         <SectionHeading title="What's included in the terms" lead="The details that matter when you're choosing a plan — stated plainly." />
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 16 }} data-platform="1">
           {terms.map((t) => (
             <div key={t.title} style={{ background: "#fff", border: "1px solid #E9EEF6", borderRadius: 12, padding: 24 }}>
-              <div style={{ font: "700 16px var(--font-manrope)", color: "#0B1230", marginBottom: 8 }}>{t.title}</div>
+              <div style={{ font: "700 16px var(--font-inter)", color: "#0F172A", marginBottom: 8 }}>{t.title}</div>
               <div style={{ font: "400 14.5px/22px var(--font-inter)", color: "#64748B" }}>{t.body}</div>
             </div>
           ))}
@@ -54,8 +54,8 @@ export default function PricingPage() {
         <SectionHeading title="Pricing FAQ" />
         <div style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: 880 }}>
           {pricingFaqs.map((f) => (
-            <div key={f.q} style={{ background: "#F6F8FC", border: "1px solid #E9EEF6", borderRadius: 11, padding: "20px 22px" }}>
-              <div style={{ font: "700 16px var(--font-manrope)", color: "#0B1230", marginBottom: 8 }}>{f.q}</div>
+            <div key={f.q} style={{ background: "#F8FAFC", border: "1px solid #E9EEF6", borderRadius: 11, padding: "20px 22px" }}>
+              <div style={{ font: "700 16px var(--font-inter)", color: "#0F172A", marginBottom: 8 }}>{f.q}</div>
               <div style={{ font: "400 15px/24px var(--font-inter)", color: "#475569" }}>{f.a}</div>
             </div>
           ))}

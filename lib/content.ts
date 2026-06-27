@@ -16,9 +16,9 @@ export function badgeStyle(kind: BadgeKind | ""): CSSProperties | undefined {
   const map: Record<BadgeKind, CSSProperties> = {
     good: { background: "#E6F6EF", color: "#0F9F6E" },
     warn: { background: "#FCEFDD", color: "#D97706" },
-    bad: { background: "#FBE9E9", color: "#CB0000" },
-    info: { background: "#EAF0FF", color: "#2453D4" },
-    navy: { background: "#EEF0FF", color: "#212177" },
+    bad: { background: "#FBE9E9", color: "#B91C1C" },
+    info: { background: "#EEF2FF", color: "#4F46E5" },
+    navy: { background: "#EEF2FF", color: "#4F46E5" },
     plain: { background: "#F1F5FB", color: "#475569" },
   };
   return {
@@ -225,13 +225,13 @@ export const afterItems = [
 /* ---- Platform modules ---- */
 export type Module = { title: string; desc: string; icon: string; bg: string; fg: string; href: string };
 export const platform: Module[] = [
-  { title: "Lead & pipeline management", desc: "Capture from every channel, score intent, and move enquiries through a pipeline built for education.", icon: "LP", bg: "#EAF0FF", fg: "#2453D4", href: "/product#leads" },
-  { title: "Counselling & follow-ups", desc: "Conversation history, reminders, and next actions so no student waits and no context is lost.", icon: "CF", bg: "#EEF0FF", fg: "#212177", href: "/product#counselling" },
+  { title: "Lead & pipeline management", desc: "Capture from every channel, score intent, and move enquiries through a pipeline built for education.", icon: "LP", bg: "#EEF2FF", fg: "#4F46E5", href: "/product#leads" },
+  { title: "Counselling & follow-ups", desc: "Conversation history, reminders, and next actions so no student waits and no context is lost.", icon: "CF", bg: "#EEF2FF", fg: "#4F46E5", href: "/product#counselling" },
   { title: "Admissions & applications", desc: "Track institutions, programmes, intakes, and status from draft through to offer.", icon: "AA", bg: "#E6F6EF", fg: "#0F9F6E", href: "/product#admissions" },
-  { title: "Document management", desc: "Readiness checklists, versioned uploads, and clear missing, rejected, and verified states.", icon: "DM", bg: "#FBE9E9", fg: "#CB0000", href: "/product#documents" },
+  { title: "Document management", desc: "Readiness checklists, versioned uploads, and clear missing, rejected, and verified states.", icon: "DM", bg: "#FBE9E9", fg: "#B91C1C", href: "/product#documents" },
   { title: "Course Finder", desc: "Filter programmes by country, intake, fees, and entry criteria, then shortlist in seconds.", icon: "CF", bg: "#FCEFDD", fg: "#D97706", href: "/product#course-finder" },
-  { title: "Visa & visitor visa", desc: "Country-specific checklists, filing stages, and outcome tracking with clear ownership.", icon: "VV", bg: "#EAF0FF", fg: "#2453D4", href: "/product#visa" },
-  { title: "Partner Hub", desc: "Onboard sub-agents, control access, manage agreements, and track commissions.", icon: "PH", bg: "#EEF0FF", fg: "#212177", href: "/product#partner-hub" },
+  { title: "Visa & visitor visa", desc: "Country-specific checklists, filing stages, and outcome tracking with clear ownership.", icon: "VV", bg: "#EEF2FF", fg: "#4F46E5", href: "/product#visa" },
+  { title: "Partner Hub", desc: "Onboard sub-agents, control access, manage agreements, and track commissions.", icon: "PH", bg: "#EEF2FF", fg: "#4F46E5", href: "/product#partner-hub" },
   { title: "Finance", desc: "Fees, receipts, balances, invoices, and Razorpay payments reconciled to the record.", icon: "FN", bg: "#E6F6EF", fg: "#0F9F6E", href: "/product#finance" },
   { title: "Reports & automation", desc: "Dashboards, conversion reporting, and automated routing, notifications, and communication.", icon: "RA", bg: "#FCEFDD", fg: "#D97706", href: "/product#reports" },
 ];

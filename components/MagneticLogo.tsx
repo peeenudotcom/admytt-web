@@ -68,9 +68,9 @@ export default function MagneticLogo({ height = 26 }: { height?: number }) {
         style={{ height, width: "auto", display: "block", willChange: "transform" }}
       />
       <span style={{ display: "flex", alignItems: "flex-end", gap: 3, height: 24 }}>
-        <span data-bar="1" style={{ width: 5, height: 24, background: "#CB0000", borderRadius: 1, willChange: "transform" }} />
-        <span data-bar="1" style={{ width: 4, height: 16, background: "#212177", borderRadius: 1, willChange: "transform" }} />
-        <span data-bar="1" style={{ width: 3, height: 10, background: "#CB0000", borderRadius: 1, willChange: "transform" }} />
+        <span data-bar="1" style={{ width: 5, height: 24, background: "#B91C1C", borderRadius: 1, willChange: "transform" }} />
+        <span data-bar="1" style={{ width: 4, height: 16, background: "#4F46E5", borderRadius: 1, willChange: "transform" }} />
+        <span data-bar="1" style={{ width: 3, height: 10, background: "#B91C1C", borderRadius: 1, willChange: "transform" }} />
       </span>
     </span>
   );

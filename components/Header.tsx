@@ -71,7 +71,7 @@ export default function Header() {
         </nav>
 
         <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 16 }} data-desk="1">
-          <a href={site.appUrl} style={{ font: "600 14.5px var(--font-inter)", color: "#0B1230", textDecoration: "none" }}>
+          <a href={site.appUrl} style={{ font: "600 14.5px var(--font-inter)", color: "#0F172A", textDecoration: "none" }}>
             Log in
           </a>
           <Link
@@ -81,10 +81,10 @@ export default function Header() {
               font: "700 14.5px var(--font-inter)",
               color: "#fff",
               textDecoration: "none",
-              background: "#2453D4",
+              background: "#4F46E5",
               padding: "11px 20px",
               borderRadius: 8,
-              boxShadow: "0 6px 16px rgba(36,83,212,.28)",
+              boxShadow: "0 6px 16px rgba(79,70,229,.28)",
             }}
           >
             Book a demo
@@ -110,7 +110,7 @@ export default function Header() {
           }}
           data-mob="1"
         >
-          <span style={{ display: "block", width: 18, height: 2, background: "#0B1230", boxShadow: "0 -6px 0 #0B1230,0 6px 0 #0B1230" }} />
+          <span style={{ display: "block", width: 18, height: 2, background: "#0F172A", boxShadow: "0 -6px 0 #0F172A,0 6px 0 #0F172A" }} />
         </button>
       </div>
 
@@ -139,7 +139,7 @@ export default function Header() {
               <button
                 aria-label="Close menu"
                 onClick={closeMenu}
-                style={{ background: "#F1F5FB", border: "none", width: 38, height: 38, borderRadius: 8, fontSize: 20, color: "#0B1230", cursor: "pointer" }}
+                style={{ background: "#F1F5FB", border: "none", width: 38, height: 38, borderRadius: 8, fontSize: 20, color: "#0F172A", cursor: "pointer" }}
               >
                 ×
               </button>
@@ -149,15 +149,15 @@ export default function Header() {
                 key={n.label}
                 href={n.href}
                 onClick={closeMenu}
-                style={{ font: "600 16px var(--font-inter)", color: "#0B1230", textDecoration: "none", padding: "13px 8px", borderBottom: "1px solid #EEF2F8" }}
+                style={{ font: "600 16px var(--font-inter)", color: "#0F172A", textDecoration: "none", padding: "13px 8px", borderBottom: "1px solid #EEF2F8" }}
               >
                 {n.label}
               </Link>
             ))}
-            <Link href="/book-a-demo" onClick={closeMenu} style={{ marginTop: 18, font: "600 15px var(--font-inter)", color: "#fff", textDecoration: "none", background: "#2453D4", padding: 14, borderRadius: 8, textAlign: "center" }}>
+            <Link href="/book-a-demo" onClick={closeMenu} style={{ marginTop: 18, font: "600 15px var(--font-inter)", color: "#fff", textDecoration: "none", background: "#4F46E5", padding: 14, borderRadius: 8, textAlign: "center" }}>
               Book a demo
             </Link>
-            <Link href="/product" onClick={closeMenu} style={{ font: "600 15px var(--font-inter)", color: "#0B1230", textDecoration: "none", border: "1px solid #DCE3EE", padding: 14, borderRadius: 8, textAlign: "center" }}>
+            <Link href="/product" onClick={closeMenu} style={{ font: "600 15px var(--font-inter)", color: "#0F172A", textDecoration: "none", border: "1px solid #DCE3EE", padding: 14, borderRadius: 8, textAlign: "center" }}>
               See the product
             </Link>
             <a href={site.appUrl} style={{ font: "600 15px var(--font-inter)", color: "#64748B", textDecoration: "none", padding: 12, textAlign: "center" }}>

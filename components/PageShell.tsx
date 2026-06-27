@@ -6,7 +6,7 @@ export default function PageShell({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />
-      <main id="main" style={{ position: "relative", background: "#F6F8FC" }}>
+      <main id="main" style={{ position: "relative", background: "#F8FAFC" }}>
         {children}
       </main>
       <Footer />

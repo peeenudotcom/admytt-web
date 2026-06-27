@@ -33,9 +33,9 @@ export default function AiPage() {
         <SectionHeading eyebrow="What the AI actually does" title="Concrete behaviours, tied to product actions" lead="No vague claims. Each capability corresponds to something visible in the product that a person reviews." />
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 18 }} data-platform="1">
           {behaviours.map((b) => (
-            <div key={b.title} style={{ background: "#F6F8FC", border: "1px solid #E9EEF6", borderRadius: 13, padding: 24 }}>
-              <span style={{ display: "flex", width: 38, height: 38, borderRadius: 9, alignItems: "center", justifyContent: "center", font: "700 13px var(--font-manrope)", background: "#EEF0FF", color: "#212177" }}>AI</span>
-              <div style={{ font: "700 16.5px var(--font-manrope)", color: "#0B1230", margin: "14px 0 7px" }}>{b.title}</div>
+            <div key={b.title} style={{ background: "#F8FAFC", border: "1px solid #E9EEF6", borderRadius: 13, padding: 24 }}>
+              <span style={{ display: "flex", width: 38, height: 38, borderRadius: 9, alignItems: "center", justifyContent: "center", font: "700 13px var(--font-inter)", background: "#EEF2FF", color: "#4F46E5" }}>AI</span>
+              <div style={{ font: "700 16.5px var(--font-inter)", color: "#0F172A", margin: "14px 0 7px" }}>{b.title}</div>
               <div style={{ font: "400 14.5px/22px var(--font-inter)", color: "#64748B" }}>{b.desc}</div>
             </div>
           ))}
@@ -46,9 +46,9 @@ export default function AiPage() {
       <AICommandCentre />
 
       <Band bg="#fff">
-        <div style={{ display: "flex", alignItems: "center", gap: 12, background: "#EEF0FF", border: "1px solid #D8DCFB", borderRadius: 12, padding: "20px 24px", maxWidth: 760 }}>
-          <span style={{ color: "#2453D4", font: "700 18px var(--font-manrope)" }}>◆</span>
-          <div style={{ font: "600 16px/24px var(--font-inter)", color: "#212177" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 12, background: "#EEF2FF", border: "1px solid #D8DCFB", borderRadius: 12, padding: "20px 24px", maxWidth: 760 }}>
+          <span style={{ color: "#4F46E5", font: "700 18px var(--font-inter)" }}>◆</span>
+          <div style={{ font: "600 16px/24px var(--font-inter)", color: "#4F46E5" }}>
             AI suggests. Your team decides. Suggestions and drafts are always reviewable before anything reaches a student, an institution, or a payment.
           </div>
         </div>

@@ -14,18 +14,18 @@ export default function OgImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "linear-gradient(135deg,#0B1230 0%,#212177 100%)",
+          background: "linear-gradient(135deg,#0F172A 0%,#4F46E5 100%)",
           padding: 80,
           fontFamily: "sans-serif",
         }}
       >
         <div style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
-          <div style={{ fontSize: 64, fontWeight: 800, color: "#CB0000" }}>ad</div>
+          <div style={{ fontSize: 64, fontWeight: 800, color: "#B91C1C" }}>ad</div>
           <div style={{ fontSize: 64, fontWeight: 800, color: "#fff" }}>MYTT</div>
           <div style={{ display: "flex", alignItems: "flex-end", gap: 6, marginLeft: 12, marginBottom: 12 }}>
-            <div style={{ width: 14, height: 56, background: "#CB0000", borderRadius: 2 }} />
+            <div style={{ width: 14, height: 56, background: "#B91C1C", borderRadius: 2 }} />
             <div style={{ width: 11, height: 40, background: "#5b63c4", borderRadius: 2 }} />
-            <div style={{ width: 8, height: 26, background: "#CB0000", borderRadius: 2 }} />
+            <div style={{ width: 8, height: 26, background: "#B91C1C", borderRadius: 2 }} />
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>

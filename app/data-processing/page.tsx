@@ -52,7 +52,7 @@ export default function DataProcessingPage() {
             </div>
             {subprocessors.map((s) => (
               <div key={s.name} style={{ display: "grid", gridTemplateColumns: "1.2fr 1.6fr 1fr", borderTop: "1px solid #EEF2F8", font: "400 13.5px/20px var(--font-inter)", color: "#334155" }}>
-                <div style={{ padding: "12px 14px", fontWeight: 600, color: "#0B1230" }}>{s.name}</div>
+                <div style={{ padding: "12px 14px", fontWeight: 600, color: "#0F172A" }}>{s.name}</div>
                 <div style={{ padding: "12px 14px" }}>{s.purpose}</div>
                 <div style={{ padding: "12px 14px" }}>{s.region}</div>
               </div>

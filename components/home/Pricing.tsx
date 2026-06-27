@@ -6,13 +6,13 @@ import { planData } from "@/lib/content";
 import { track } from "@/lib/analytics";
 
 const segBtn = (on: boolean): React.CSSProperties => ({
-  font: "700 13.5px var(--font-manrope)",
+  font: "700 13.5px var(--font-inter)",
   border: "none",
   borderRadius: 7,
   padding: "9px 18px",
   cursor: "pointer",
   background: on ? "#fff" : "transparent",
-  color: on ? "#0B1230" : "#64748B",
+  color: on ? "#0F172A" : "#64748B",
   boxShadow: on ? "0 1px 4px rgba(11,18,48,.12)" : "none",
 });
 
@@ -24,8 +24,8 @@ export default function Pricing({ withHeading = true }: { withHeading?: boolean 
       <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 28px" }}>
         {withHeading && (
           <div style={{ textAlign: "center", maxWidth: 680, margin: "0 auto 30px" }}>
-            <div style={{ font: "700 13px var(--font-inter)", color: "#2453D4", marginBottom: 12 }}>Pricing</div>
-            <h2 data-h2 style={{ font: "800 38px/45px var(--font-manrope)", letterSpacing: "-.02em", color: "#0B1230", marginBottom: 14 }}>Transparent plans for teams of every size</h2>
+            <div style={{ font: "700 13px var(--font-inter)", color: "#4F46E5", marginBottom: 12 }}>Pricing</div>
+            <h2 data-h2 style={{ font: "800 38px/45px var(--font-inter)", letterSpacing: "-.02em", color: "#0F172A", marginBottom: 14 }}>Transparent plans for teams of every size</h2>
             <p style={{ font: "400 18px/28px var(--font-inter)", color: "#475569" }}>Book a demo or talk to sales. Seats and module limits are shown up front — no surprises at renewal.</p>
           </div>
         )}
@@ -44,19 +44,19 @@ export default function Pricing({ withHeading = true }: { withHeading?: boolean 
             const price = talk ? "Talk to sales" : annual ? p.a : p.m;
             const subColor = f ? "#aab4d6" : "#94a3b8";
             return (
-              <div key={p.name} style={{ position: "relative", borderRadius: 14, padding: 30, ...(f ? { background: "#0B1230", border: "1px solid #0B1230", boxShadow: "0 30px 60px -30px rgba(11,18,48,.5)" } : { background: "#fff", border: "1px solid #E9EEF6" }) }}>
-                {f && <div style={{ position: "absolute", top: -11, left: 24, background: "#CB0000", color: "#fff", font: "700 11px var(--font-inter)", borderRadius: 999, padding: "4px 12px" }}>Most popular</div>}
-                <div style={{ font: "700 17px var(--font-manrope)", color: f ? "#fff" : "#0B1230", marginBottom: 6 }}>{p.name}</div>
+              <div key={p.name} style={{ position: "relative", borderRadius: 14, padding: 30, ...(f ? { background: "#0F172A", border: "1px solid #0F172A", boxShadow: "0 30px 60px -30px rgba(11,18,48,.5)" } : { background: "#fff", border: "1px solid #E9EEF6" }) }}>
+                {f && <div style={{ position: "absolute", top: -11, left: 24, background: "#B91C1C", color: "#fff", font: "700 11px var(--font-inter)", borderRadius: 999, padding: "4px 12px" }}>Most popular</div>}
+                <div style={{ font: "700 17px var(--font-inter)", color: f ? "#fff" : "#0F172A", marginBottom: 6 }}>{p.name}</div>
                 <div style={{ font: "400 13.5px/20px var(--font-inter)", color: subColor, marginBottom: 20, minHeight: 40 }}>{p.who}</div>
                 <div style={{ display: "flex", alignItems: "baseline", gap: 4, marginBottom: 4 }}>
-                  <span style={{ font: "800 38px var(--font-manrope)", color: f ? "#fff" : "#0B1230" }}>{price}</span>
+                  <span style={{ font: "800 38px var(--font-inter)", color: f ? "#fff" : "#0F172A" }}>{price}</span>
                   <span style={{ font: "500 14px var(--font-inter)", color: subColor }}>{talk ? "" : "/ seat / mo"}</span>
                 </div>
                 <div style={{ font: "500 12.5px var(--font-inter)", color: subColor, marginBottom: 22 }}>{talk ? "Custom pricing for your network" : annual ? "billed annually, per seat" : "billed monthly, per seat"}</div>
                 <Link
                   href="/book-a-demo"
                   onClick={() => track("plan_selected", { plan: p.name })}
-                  style={{ display: "block", textAlign: "center", textDecoration: "none", font: "700 14.5px var(--font-manrope)", borderRadius: 8, padding: 13, ...(f ? { background: "#2453D4", color: "#fff" } : talk ? { background: "#fff", color: "#212177", border: "1px solid #DCE3EE" } : { background: "#212177", color: "#fff" }) }}
+                  style={{ display: "block", textAlign: "center", textDecoration: "none", font: "700 14.5px var(--font-inter)", borderRadius: 8, padding: 13, ...(f ? { background: "#4F46E5", color: "#fff" } : talk ? { background: "#fff", color: "#4F46E5", border: "1px solid #DCE3EE" } : { background: "#4F46E5", color: "#fff" }) }}
                 >
                   {talk ? "Talk to sales" : "Book a demo"}
                 </Link>
