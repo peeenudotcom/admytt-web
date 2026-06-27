@@ -1,0 +1,72 @@
+/* ===========================================================================
+   adMYTT marketing — global styles
+   Ported from the approved Claude Design v2 prototype (resets, keyframes,
+   responsive rules) so the React build matches the design pixel-for-pixel.
+   =========================================================================== */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: #F6F8FC;
+  color: #111827;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+::selection { background: #212177; color: #fff; }
+
+a { color: inherit; }
+
+/* Visible keyboard focus across the whole site (WCAG 2.2 AA) */
+:focus-visible {
+  outline: 2px solid #2453D4;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 200;
+  background: #0B1230;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 0 0 8px 0;
+  font: 600 14px var(--font-inter), sans-serif;
+}
+.skip-link:focus { left: 0; }
+
+@keyframes adfade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes adpulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+@keyframes adscan { 0% { transform: translateX(-100%); } 100% { transform: translateX(320%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* ---- Responsive rules (ported verbatim from the prototype helmet block) ---- */
+@media (max-width: 1024px) {
+  [data-desk] { display: none !important; }
+  [data-mob]  { display: flex !important; }
+  [data-hero] { grid-template-columns: 1fr !important; gap: 38px !important; }
+  [data-trust] { grid-template-columns: repeat(2, 1fr) !important; row-gap: 26px !important; }
+  [data-platform] { grid-template-columns: repeat(2, 1fr) !important; }
+  [data-integ] { grid-template-columns: repeat(2, 1fr) !important; }
+  [data-ai], [data-journey], [data-ba], [data-teamview], [data-sec], [data-evid], [data-pricing], [data-demoform] {
+    grid-template-columns: 1fr !important;
+  }
+  [data-mig] { grid-template-columns: repeat(2, 1fr) !important; }
+  [data-foot] { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 640px) {
+  [data-trust] { grid-template-columns: repeat(2, 1fr) !important; }
+  [data-platform], [data-integ], [data-mig], [data-foot] { grid-template-columns: 1fr !important; }
+  [data-footbot] { flex-direction: column; align-items: flex-start; }
+  [data-hsb] { display: none !important; }
+  h1[data-h1] { font-size: 36px !important; line-height: 42px !important; }
+  section h2[data-h2] { font-size: 30px !important; line-height: 38px !important; }
+  [data-demoform] h2[data-h2] { font-size: 32px !important; line-height: 40px !important; }
+}
