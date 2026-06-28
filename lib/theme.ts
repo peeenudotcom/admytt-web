@@ -32,12 +32,12 @@ export const T = {
   // dark AI panel gradient
   aiFrom: "#1E1B4B",
   aiTo: "#312E81",
-  // warm "real app" surface (anyimmi-style product frames)
-  cream: "#F7F4EE",
-  creamBar: "#EFEBE2",
-  creamBorder: "#E7E2D6",
-  ink: "#1C1917",
-  inkMuted: "#6B6357",
+  // product-frame surface — matches the real adMYTT app (white + slate)
+  cream: "#FFFFFF",
+  creamBar: "#F8FAFC",
+  creamBorder: "#E2E8F0",
+  ink: "#0F172A",
+  inkMuted: "#64748B",
   canvas: "#0A0A0F",
 } as const;
 
