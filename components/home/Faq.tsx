@@ -11,8 +11,11 @@ export default function Faq({ withHeading = true }: { withHeading?: boolean }) {
       <div style={{ maxWidth: 880, margin: "0 auto", padding: "0 28px" }}>
         {withHeading && (
           <div style={{ textAlign: "center", marginBottom: 40 }}>
-            <div style={{ font: "700 13px var(--font-inter)", color: "#4F46E5", marginBottom: 12 }}>Frequently asked</div>
-            <h2 data-h2 style={{ font: "800 38px/45px var(--font-inter)", letterSpacing: "-.02em", color: "#0F172A" }}>The questions buyers ask first</h2>
+            <div style={{ font: "700 13px var(--font-inter)", letterSpacing: ".08em", textTransform: "uppercase", color: "#4F46E5", marginBottom: 14 }}>Questions, answered honestly</div>
+            <h2 data-h2 style={{ font: "800 48px/53px var(--font-inter)", letterSpacing: "-.025em", color: "#0F172A", marginBottom: 14 }}>Frequently <span className="hl">asked</span>.</h2>
+            <p style={{ font: "400 17px/27px var(--font-inter)", color: "#475569" }}>
+              If it isn&apos;t here, email <a href="mailto:info@admytt.com" style={{ color: "#4F46E5", fontWeight: 600, textDecoration: "none" }}>info@admytt.com</a> — we reply same day.
+            </p>
           </div>
         )}
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }} data-faq="1">

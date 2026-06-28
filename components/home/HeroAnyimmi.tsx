@@ -28,7 +28,7 @@ export default function HeroAnyimmi() {
           <Sparkles size={14} /> The operating system for education consultancies
         </div>
         <h1 data-h1 style={{ font: `800 58px/64px ${F}`, letterSpacing: "-.025em", color: "#fff", margin: "0 auto 22px", maxWidth: 900 }}>
-          Manage every student journey—from first enquiry to final visa decision.
+          Manage every student journey, from first enquiry to final <span style={{ color: "#818CF8" }}>visa decision</span>.
         </h1>
         <p style={{ font: `400 19px/30px ${F}`, color: "#A7A3B3", maxWidth: 680, margin: "0 auto 30px" }}>
           adMYTT brings leads, counselling, applications, documents, follow-ups and team performance into one secure platform built specifically for education consultancies.

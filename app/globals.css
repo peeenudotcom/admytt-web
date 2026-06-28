@@ -88,6 +88,9 @@ a { color: inherit; }
   transform: translateY(-2px);
 }
 
+/* Headline highlight — colour one or two key words in indigo. */
+.hl { color: #4F46E5; }
+
 /* FAQ rows: highlight the whole row on hover (single border, subtle tint). */
 .faq-item {
   background: #fff;

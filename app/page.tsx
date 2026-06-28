@@ -64,7 +64,7 @@ export default function HomePage() {
         <ProductScene
           eyebrow="Today workspace"
           scrollHeight={420}
-          title="Start every day knowing exactly what needs attention."
+          title={<>Start every day knowing exactly what <span className="hl">needs attention</span>.</>}
           body="A daily agenda, not a wall of charts. Overdue and due-today follow-ups, counselling appointments, application deadlines, missing-document alerts and assigned tasks — filtered by priority and branch, each one click from the student record."
           points={["Overdue & due-today, prioritised", "Counselling appointments & deadlines", "One-click to the student record"]}
           frameUrl="app.admytt.com/today"
@@ -82,7 +82,7 @@ export default function HomePage() {
           bg={T.bg}
           scrollHeight={440}
           eyebrow="Leads & pipeline"
-          title="Turn every enquiry into an owned next step."
+          title={<>Turn every enquiry into an <span className="hl">owned next step</span>.</>}
           body="Lead management is the entry point to the whole CRM. Capture from every channel, score intent, filter by country, source, stage, owner and intake, and move enquiries forward with bulk assignment and export — nothing sits unowned."
           points={["AI scoring & saved views", "Owner, stage & next follow-up on every lead", "Bulk assign & export"]}
           cta={{ label: "Explore lead management", href: "/product#leads" }}
@@ -99,7 +99,7 @@ export default function HomePage() {
         <ProductScene
           reverse
           eyebrow="Documents & applications"
-          title="Know exactly what's missing on every file."
+          title={<>Know exactly what&apos;s <span className="hl">missing</span> on every file.</>}
           body="A readiness checklist per application shows what's verified, in review, missing, or rejected — so nothing blocks an offer or a visa filing. Applications, intakes and deadlines stay attached to the same record."
           points={["Per-application readiness checklist", "Versioned uploads with review status", "Private, workspace-scoped storage"]}
           cta={{ label: "Explore documents", href: "/product#documents" }}
@@ -117,7 +117,7 @@ export default function HomePage() {
           layout="stacked"
           bg={T.bg}
           eyebrow="Visa Operations"
-          title="Run visitor visa cases without scattered checklists."
+          title={<>Run <span className="hl">visitor visa</span> cases without scattered checklists.</>}
           body="Study visa and visitor visa are separate, first-class workflows. Track applicants and accompanying travellers, sponsor or host details, country-specific checklists, appointments, payments, ownership and the final outcome — all in one place."
           points={["Study Visa & Visitor Visa, side by side", "Country checklists, appointments & payments", "Owner, next action & recorded outcome"]}
           cta={{ label: "Explore visa operations", href: "/product#visa" }}
@@ -137,7 +137,7 @@ export default function HomePage() {
           layout="stacked"
           eyebrow="Academy"
           badge="Optional module"
-          title="Run enquiries, batches, fees and learner outcomes in one academy workspace."
+          title={<>Run enquiries, batches, fees and learner outcomes in one <span className="hl">academy workspace</span>.</>}
           body="An optional expansion for consultancies that also train. Capture course enquiries from QR and campaigns, manage courses and batches, track enrolment and attendance, collect fees, issue certificates and record learner outcomes — without leaving adMYTT."
           points={["QR & campaign lead capture", "Batches, enrolment & attendance", "Fees, dues, certificates & outcomes"]}
           cta={{ label: "Explore Academy", href: "/solutions#academies" }}

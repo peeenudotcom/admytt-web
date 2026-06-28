@@ -24,7 +24,7 @@ export default function JourneyRail() {
       <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 28px" }}>
         <div style={{ maxWidth: 680, marginBottom: 40 }}>
           <div style={{ font: "700 13px var(--font-inter)", color: "#4F46E5", marginBottom: 12 }}>One connected operating flow</div>
-          <h2 data-h2 style={{ font: "800 38px/45px var(--font-inter)", letterSpacing: "-.02em", color: "#0F172A", marginBottom: 14 }}>Follow one student record across every team</h2>
+          <h2 data-h2 style={{ font: "800 38px/45px var(--font-inter)", letterSpacing: "-.02em", color: "#0F172A", marginBottom: 14 }}>Follow <span className="hl">one student record</span> across every team</h2>
           <p style={{ font: "400 18px/28px var(--font-inter)", color: "#475569" }}>From the first enquiry to a confirmed enrolment, every stage stays on the same record. Select a stage to see exactly what your team works on.</p>
         </div>
 

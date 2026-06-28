@@ -12,7 +12,7 @@ export default function AiOps() {
             <Sparkles size={13} /> AI Ops Command Center
           </div>
           <h2 data-h2 style={{ font: `800 38px/45px ${F}`, letterSpacing: "-.02em", color: T.text, marginBottom: 16 }}>
-            Your team opens the app and already knows what to do.
+            Your team opens the app and already <span className="hl">knows what to do</span>.
           </h2>
           <p style={{ font: `400 17px/27px ${F}`, color: T.muted, marginBottom: 22 }}>
             adMYTT scores leads, surfaces urgent files, flags missing documents, and drafts follow-ups — each tied to a real action your team reviews and approves.

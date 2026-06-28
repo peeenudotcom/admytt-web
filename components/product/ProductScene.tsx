@@ -25,7 +25,7 @@ export function ProductScene({
   id?: string;
   eyebrow: string;
   badge?: string;
-  title: string;
+  title: React.ReactNode;
   body: string;
   points?: string[];
   cta?: { label: string; href: string };

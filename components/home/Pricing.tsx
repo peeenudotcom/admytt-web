@@ -25,7 +25,7 @@ export default function Pricing({ withHeading = true }: { withHeading?: boolean 
         {withHeading && (
           <div style={{ textAlign: "center", maxWidth: 680, margin: "0 auto 30px" }}>
             <div style={{ font: "700 13px var(--font-inter)", color: "#4F46E5", marginBottom: 12 }}>Pricing</div>
-            <h2 data-h2 style={{ font: "800 38px/45px var(--font-inter)", letterSpacing: "-.02em", color: "#0F172A", marginBottom: 14 }}>Transparent plans for teams of every size</h2>
+            <h2 data-h2 style={{ font: "800 38px/45px var(--font-inter)", letterSpacing: "-.02em", color: "#0F172A", marginBottom: 14 }}>Transparent plans for teams of <span className="hl">every size</span></h2>
             <p style={{ font: "400 18px/28px var(--font-inter)", color: "#475569" }}>Book a demo or talk to sales. Seats and module limits are shown up front — no surprises at renewal.</p>
           </div>
         )}
