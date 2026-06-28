@@ -1,6 +1,7 @@
 import { Sparkles, ShieldCheck } from "lucide-react";
 import { T, F } from "@/lib/theme";
-import { BrowserFrame, AICommandScreen } from "@/components/product/Screens";
+import { BrowserFrame } from "@/components/product/Screens";
+import LiveAICommand from "@/components/product/LiveAICommand";
 
 export default function AiOps() {
   return (
@@ -32,7 +33,7 @@ export default function AiOps() {
           </div>
         </div>
         <BrowserFrame url="app.admytt.com/dashboard">
-          <AICommandScreen />
+          <LiveAICommand />
         </BrowserFrame>
       </div>
     </section>

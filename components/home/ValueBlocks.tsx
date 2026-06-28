@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { T, F } from "@/lib/theme";
-import { BrowserFrame, LeadsScreen, DocumentsScreen, VisaScreen } from "@/components/product/Screens";
+import { BrowserFrame, DocumentsScreen, VisaScreen } from "@/components/product/Screens";
+import LiveLeads from "@/components/product/LiveLeads";
 
 type Block = {
   eyebrow: string;
@@ -21,7 +22,7 @@ const blocks: Block[] = [
     points: ["Multi-channel capture & auto-assignment", "AI lead scoring and case health", "Saved views for each counsellor"],
     href: "/product#leads",
     url: "app.admytt.com/leads",
-    screen: <LeadsScreen />,
+    screen: <LiveLeads />,
   },
   {
     eyebrow: "Documents",
