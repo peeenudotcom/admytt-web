@@ -76,6 +76,18 @@ a { color: inherit; }
   outline-color: rgba(124, 58, 237, .55);
   transform: translateY(-2px);
 }
+/* Feature/info cards: a single border that turns indigo on hover (no outline,
+   so there is never a double border). */
+.card-hover {
+  border: 1px solid #E9EEF6;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.card-hover:hover {
+  border-color: #7C3AED;
+  box-shadow: 0 14px 32px -18px rgba(124, 58, 237, .35);
+  transform: translateY(-2px);
+}
+
 .app-scroll {
   overflow-y: auto;
   overscroll-behavior: auto;

@@ -111,7 +111,7 @@ export function SecuritySection() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
             {securityPoints.map((s) => (
-              <div key={s.title} style={{ background: "#F8FAFC", border: "1px solid #E9EEF6", borderRadius: 12, padding: 20 }}>
+              <div key={s.title} className="card-hover" style={{ background: "#F8FAFC", borderRadius: 12, padding: 20 }}>
                 <span style={{ width: 34, height: 34, borderRadius: 9, background: "#EEF2FF", color: "#4F46E5", display: "flex", alignItems: "center", justifyContent: "center", font: "700 13px var(--font-inter)" }}>{s.ab}</span>
                 <div style={{ font: "700 15px var(--font-inter)", color: "#0F172A", margin: "13px 0 6px" }}>{s.title}</div>
                 <div style={{ font: "400 13.5px/20px var(--font-inter)", color: "#64748B" }}>{s.desc}</div>
