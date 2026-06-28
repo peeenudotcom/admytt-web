@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import HeroNew from "@/components/home/HeroNew";
+import HeroAnyimmi from "@/components/home/HeroAnyimmi";
 import ValueBlocks from "@/components/home/ValueBlocks";
 import JourneyRail from "@/components/home/JourneyRail";
 import AiOps from "@/components/home/AiOps";
@@ -50,9 +50,9 @@ function TrustStrip() {
 export default function HomePage() {
   return (
     <>
-      <Header />
+      <Header overHero />
       <main id="main" style={{ position: "relative", background: T.surface }}>
-        <HeroNew />
+        <HeroAnyimmi />
         <TrustStrip />
         <ValueBlocks />
         <JourneyRail />

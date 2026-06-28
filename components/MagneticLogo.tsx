@@ -7,7 +7,7 @@ import { useEffect, useRef } from "react";
  * "magnetic" motion, ported verbatim from the standalone logo the user
  * approved. Respects prefers-reduced-motion (no movement).
  */
-export default function MagneticLogo({ height = 26 }: { height?: number }) {
+export default function MagneticLogo({ height = 26, white = false }: { height?: number; white?: boolean }) {
   const markRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
@@ -60,7 +60,7 @@ export default function MagneticLogo({ height = 26 }: { height?: number }) {
     <span ref={markRef} style={{ display: "flex", alignItems: "center", gap: 11 }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/logo-wordmark.png"
+        src={white ? "/logo-wordmark-white.png" : "/logo-wordmark.png"}
         alt="adMYTT"
         data-word="1"
         width={Math.round(height * ratio)}

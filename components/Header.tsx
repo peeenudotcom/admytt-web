@@ -12,9 +12,22 @@ const navLink: React.CSSProperties = {
   textDecoration: "none",
 };
 
-export default function Header() {
+export default function Header({ overHero = false }: { overHero?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
+
+  // When the header overlays a dark hero, stay transparent at the top and turn
+  // solid once the user scrolls past it.
+  useEffect(() => {
+    if (!overHero) return;
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [overHero]);
+
+  const dark = overHero && !scrolled;
 
   // Lock background scroll + restore focus to the trigger when the menu closes.
   useEffect(() => {
@@ -51,27 +64,28 @@ export default function Header() {
         position: "sticky",
         top: 0,
         zIndex: 60,
-        background: "rgba(255,255,255,.86)",
-        backdropFilter: "blur(14px)",
-        WebkitBackdropFilter: "blur(14px)",
-        borderBottom: "1px solid #E4EAF3",
+        background: dark ? "#0A0A0F" : "rgba(255,255,255,.86)",
+        backdropFilter: dark ? "none" : "blur(14px)",
+        WebkitBackdropFilter: dark ? "none" : "blur(14px)",
+        borderBottom: `1px solid ${dark ? "transparent" : "#E4EAF3"}`,
+        transition: "background .25s, border-color .25s",
       }}
     >
       <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 28px", height: 70, display: "flex", alignItems: "center", gap: 32 }}>
         <Link href="/" aria-label="adMYTT home" style={{ display: "flex", alignItems: "center", textDecoration: "none", flexShrink: 0 }}>
-          <MagneticLogo height={26} />
+          <MagneticLogo height={26} white={dark} />
         </Link>
 
         <nav aria-label="Primary" style={{ display: "flex", alignItems: "center", gap: 26, marginLeft: 8 }} data-desk="1">
           {primaryNav.map((n) => (
-            <Link key={n.label} href={n.href} style={navLink}>
+            <Link key={n.label} href={n.href} style={{ ...navLink, color: dark ? "#CBD5E1" : "#334155" }}>
               {n.label}
             </Link>
           ))}
         </nav>
 
         <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 16 }} data-desk="1">
-          <a href={site.appUrl} style={{ font: "600 14.5px var(--font-inter)", color: "#0F172A", textDecoration: "none" }}>
+          <a href={site.appUrl} style={{ font: "600 14.5px var(--font-inter)", color: dark ? "#fff" : "#0F172A", textDecoration: "none" }}>
             Log in
           </a>
           <Link
@@ -99,8 +113,8 @@ export default function Header() {
           style={{
             marginLeft: "auto",
             display: "none",
-            background: "#fff",
-            border: "1px solid #DCE3EE",
+            background: dark ? "rgba(255,255,255,.08)" : "#fff",
+            border: `1px solid ${dark ? "rgba(255,255,255,.2)" : "#DCE3EE"}`,
             borderRadius: 8,
             width: 42,
             height: 42,
@@ -110,7 +124,7 @@ export default function Header() {
           }}
           data-mob="1"
         >
-          <span style={{ display: "block", width: 18, height: 2, background: "#0F172A", boxShadow: "0 -6px 0 #0F172A,0 6px 0 #0F172A" }} />
+          <span style={{ display: "block", width: 18, height: 2, background: dark ? "#fff" : "#0F172A", boxShadow: dark ? "0 -6px 0 #fff,0 6px 0 #fff" : "0 -6px 0 #0F172A,0 6px 0 #0F172A" }} />
         </button>
       </div>
 
