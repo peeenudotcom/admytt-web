@@ -19,6 +19,7 @@ export function ProductScene({
   chips = [],
   layout = "split",
   bg = T.surface,
+  scrollHeight,
   children,
 }: {
   id?: string;
@@ -33,6 +34,7 @@ export function ProductScene({
   chips?: FloatChip[];
   layout?: "split" | "stacked";
   bg?: string;
+  scrollHeight?: number;
   children: React.ReactNode;
 }) {
   const Copy = (
@@ -60,7 +62,7 @@ export function ProductScene({
     </div>
   );
 
-  const Frame = <AppFrame url={frameUrl} chips={chips}>{children}</AppFrame>;
+  const Frame = <AppFrame url={frameUrl} chips={chips} scrollHeight={scrollHeight}>{children}</AppFrame>;
 
   return (
     <section id={id} style={{ background: bg, padding: "80px 0", borderTop: `1px solid ${T.border}` }}>

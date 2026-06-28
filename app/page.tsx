@@ -63,6 +63,7 @@ export default function HomePage() {
         {/* Today */}
         <ProductScene
           eyebrow="Today workspace"
+          scrollHeight={420}
           title="Start every day knowing exactly what needs attention."
           body="A daily agenda, not a wall of charts. Overdue and due-today follow-ups, counselling appointments, application deadlines, missing-document alerts and assigned tasks — filtered by priority and branch, each one click from the student record."
           points={["Overdue & due-today, prioritised", "Counselling appointments & deadlines", "One-click to the student record"]}
@@ -79,6 +80,7 @@ export default function HomePage() {
         <ProductScene
           layout="stacked"
           bg={T.bg}
+          scrollHeight={440}
           eyebrow="Leads & pipeline"
           title="Turn every enquiry into an owned next step."
           body="Lead management is the entry point to the whole CRM. Capture from every channel, score intent, filter by country, source, stage, owner and intake, and move enquiries forward with bulk assignment and export — nothing sits unowned."

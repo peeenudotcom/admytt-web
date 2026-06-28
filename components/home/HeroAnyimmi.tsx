@@ -63,7 +63,7 @@ export default function HeroAnyimmi() {
         <Chip dot={T.primary} style={{ top: 70, left: 4, animation: "adfloat 5s ease-in-out infinite" }}>Auto-assigned by branch rule</Chip>
         <Chip dot={T.success} style={{ bottom: 38, right: 18, animation: "adfloat2 6s ease-in-out infinite" }}>AI lead score 82 · high intent</Chip>
 
-        <div style={{ position: "relative", background: "#fff", border: "1px solid rgba(255,255,255,.1)", borderRadius: 16, boxShadow: "0 60px 120px -40px rgba(0,0,0,.8)", overflow: "hidden" }}>
+        <div className="app-frame" style={{ position: "relative", background: "#fff", overflow: "hidden", boxShadow: "0 60px 120px -40px rgba(0,0,0,.8)" }}>
           <div style={{ height: 40, background: "#F8FAFC", borderBottom: `1px solid ${T.border}`, display: "flex", alignItems: "center", gap: 7, padding: "0 14px" }}>
             <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#FF5F57" }} />
             <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#FEBC2E" }} />
@@ -72,7 +72,9 @@ export default function HeroAnyimmi() {
               <ShieldCheck size={11} /> app.admytt.com/dashboard
             </span>
           </div>
-          <LiveRealDashboard />
+          <div className="app-scroll" style={{ maxHeight: 500 }}>
+            <LiveRealDashboard />
+          </div>
         </div>
         <div style={{ textAlign: "center", marginTop: 14, font: `500 12px ${F}`, color: "#6B6779" }}>A real adMYTT workspace, with anonymised demo data.</div>
       </div>

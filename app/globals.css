@@ -62,6 +62,31 @@ a { color: inherit; }
 @keyframes adfade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @keyframes adpulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
 @keyframes adscan { 0% { transform: translateX(-100%); } 100% { transform: translateX(320%); } }
+/* Product frame: deep shadow, an accent ring on hover, and an internally
+   scrollable viewport so visitors can scroll the screenshot up and down. */
+.app-frame {
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition: outline-color .22s ease, border-color .22s ease, transform .22s ease;
+}
+.app-frame:hover {
+  border-color: #7C3AED;
+  outline-color: rgba(124, 58, 237, .55);
+  transform: translateY(-2px);
+}
+.app-scroll {
+  overflow-y: auto;
+  overscroll-behavior: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #CBD5E1 transparent;
+}
+.app-scroll::-webkit-scrollbar { width: 8px; }
+.app-scroll::-webkit-scrollbar-track { background: transparent; }
+.app-scroll::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 8px; }
+.app-scroll::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+
 @keyframes adfloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
 @keyframes adfloat2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
 @keyframes admarquee { 0% { transform: translateY(0); } 100% { transform: translateY(-50%); } }
