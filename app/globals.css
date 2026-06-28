@@ -88,6 +88,18 @@ a { color: inherit; }
   transform: translateY(-2px);
 }
 
+/* FAQ rows: highlight the whole row on hover (single border, subtle tint). */
+.faq-item {
+  background: #fff;
+  border: 1px solid #E9EEF6;
+  transition: border-color .18s ease, background-color .18s ease, box-shadow .18s ease;
+}
+.faq-item:hover {
+  border-color: #7C3AED;
+  background-color: #FBFAFF;
+  box-shadow: 0 10px 26px -18px rgba(124, 58, 237, .3);
+}
+
 .app-scroll {
   overflow-y: auto;
   overscroll-behavior: auto;

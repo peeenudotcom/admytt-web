@@ -19,7 +19,7 @@ export default function Faq({ withHeading = true }: { withHeading?: boolean }) {
           {faqs.map((f, i) => {
             const on = i === open;
             return (
-              <div key={f.q} style={{ background: "#fff", border: "1px solid #E9EEF6", borderRadius: 11, overflow: "hidden" }}>
+              <div key={f.q} className="faq-item" style={{ borderRadius: 11, overflow: "hidden" }}>
                 <button
                   onClick={() => setOpen(on ? -1 : i)}
                   aria-expanded={on}
