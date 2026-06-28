@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Sparkles, ArrowRight } from "lucide-react";
 import { T, F, ctaGradient, ctaShadow } from "@/lib/theme";
-import { BrowserFrame, DashboardScreen } from "@/components/product/Screens";
+import { BrowserFrame } from "@/components/product/Screens";
+import LiveDashboard from "@/components/product/LiveDashboard";
 
 export default function HeroNew() {
   return (
@@ -37,7 +38,7 @@ export default function HeroNew() {
       <div style={{ maxWidth: 1120, margin: "0 auto", padding: "0 28px", position: "relative" }}>
         {/* Swap to a sanitized screenshot by passing src="/screens/dashboard.png" */}
         <BrowserFrame url="app.admytt.com/dashboard">
-          <DashboardScreen />
+          <LiveDashboard />
         </BrowserFrame>
       </div>
       <div style={{ height: 80, background: `linear-gradient(${T.surface}, ${T.bg})` }} />
