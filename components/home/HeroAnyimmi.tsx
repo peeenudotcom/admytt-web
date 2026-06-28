@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Sparkles, ArrowRight, ShieldCheck } from "lucide-react";
+import { Sparkles, ArrowRight, Play, ShieldCheck } from "lucide-react";
 import { T, F, ctaGradient, ctaShadow } from "@/lib/theme";
+import { site } from "@/lib/site";
 import LiveRealDashboard from "@/components/product/LiveRealDashboard";
 
 /* Dark, dramatic hero canvas with the REAL adMYTT dashboard (white) floating
@@ -24,28 +25,36 @@ export default function HeroAnyimmi() {
 
       <div style={{ maxWidth: 1000, margin: "0 auto", padding: "0 28px", position: "relative", textAlign: "center" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(124,58,237,.14)", border: "1px solid rgba(124,58,237,.3)", color: "#C4B5FD", borderRadius: 999, padding: "6px 14px", font: `700 12.5px ${F}`, marginBottom: 22 }}>
-          <Sparkles size={14} /> AI-enabled CRM for study-abroad &amp; immigration teams
+          <Sparkles size={14} /> The operating system for education consultancies
         </div>
-        <h1 data-h1 style={{ font: `800 60px/66px ${F}`, letterSpacing: "-.025em", color: "#fff", margin: "0 auto 22px", maxWidth: 880 }}>
-          Run your consultancy from first enquiry to visa outcome.
+        <h1 data-h1 style={{ font: `800 58px/64px ${F}`, letterSpacing: "-.025em", color: "#fff", margin: "0 auto 22px", maxWidth: 900 }}>
+          Manage every student journey—from first enquiry to final visa decision.
         </h1>
-        <p style={{ font: `400 19px/30px ${F}`, color: "#A7A3B3", maxWidth: 660, margin: "0 auto 30px" }}>
-          Leads, counselling, applications, documents, and visas in one workspace — with an AI command centre so your team always knows what to do next.
+        <p style={{ font: `400 19px/30px ${F}`, color: "#A7A3B3", maxWidth: 680, margin: "0 auto 30px" }}>
+          adMYTT brings leads, counselling, applications, documents, follow-ups and team performance into one secure platform built specifically for education consultancies.
         </p>
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: 16 }}>
-          <Link href="/book-a-demo" style={{ display: "inline-flex", alignItems: "center", gap: 8, font: `700 15.5px ${F}`, color: "#fff", textDecoration: "none", background: ctaGradient, padding: "14px 26px", borderRadius: 11, boxShadow: ctaShadow }}>
-            Book a demo <ArrowRight size={17} />
-          </Link>
-          <Link href="/product" style={{ font: `700 15.5px ${F}`, color: "#fff", textDecoration: "none", background: "rgba(255,255,255,.06)", border: "1px solid rgba(255,255,255,.18)", padding: "14px 24px", borderRadius: 11 }}>
-            See the product
+          <a href={site.appUrl} style={{ display: "inline-flex", alignItems: "center", gap: 8, font: `700 15.5px ${F}`, color: "#fff", textDecoration: "none", background: ctaGradient, padding: "14px 26px", borderRadius: 11, boxShadow: ctaShadow }}>
+            Start Free for 14 Days <ArrowRight size={17} />
+          </a>
+          <Link href="/product" style={{ display: "inline-flex", alignItems: "center", gap: 9, font: `700 15.5px ${F}`, color: "#fff", textDecoration: "none", background: "rgba(255,255,255,.06)", border: "1px solid rgba(255,255,255,.18)", padding: "14px 24px", borderRadius: 11 }}>
+            <Play size={15} /> Watch Product Tour
           </Link>
         </div>
-        <div style={{ display: "flex", gap: 20, justifyContent: "center", flexWrap: "wrap", font: `500 13px ${F}`, color: "#6B6779" }}>
-          {["Workspace-isolated data", "Guided migration", "Live in days"].map((t) => (
+        <div style={{ display: "flex", gap: 20, justifyContent: "center", flexWrap: "wrap", font: `500 13px ${F}`, color: "#8E8AA0" }}>
+          {["No credit card required", "Guided data migration", "Setup support included"].map((t) => (
             <span key={t} style={{ display: "flex", alignItems: "center", gap: 7 }}>
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: T.green }} /> {t}
             </span>
           ))}
+        </div>
+        <div style={{ marginTop: 22, font: `500 13.5px ${F}`, color: "#6B6779", display: "flex", alignItems: "center", justifyContent: "center", gap: 9 }}>
+          <span style={{ display: "flex", gap: -6 }}>
+            {["#7C3AED", "#2563EB", "#0F9F6E"].map((c, i) => (
+              <span key={c} style={{ width: 18, height: 18, borderRadius: "50%", background: c, border: "2px solid #0A0A0F", marginLeft: i ? -6 : 0 }} />
+            ))}
+          </span>
+          Trusted by consultancy teams managing thousands of student applications.
         </div>
       </div>
 
