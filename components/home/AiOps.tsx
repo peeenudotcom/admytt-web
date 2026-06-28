@@ -1,6 +1,6 @@
 import { Sparkles, ShieldCheck } from "lucide-react";
 import { T, F } from "@/lib/theme";
-import { BrowserFrame } from "@/components/product/Screens";
+import { AppFrame } from "@/components/product/AppFrame";
 import LiveAICommand from "@/components/product/LiveAICommand";
 
 export default function AiOps() {
@@ -32,9 +32,15 @@ export default function AiOps() {
             <ShieldCheck size={16} /> AI suggests. Your team decides.
           </div>
         </div>
-        <BrowserFrame url="app.admytt.com/dashboard">
+        <AppFrame
+          url="app.admytt.com/ai"
+          chips={[
+            { dot: T.violet, text: "Draft ready · review", style: { top: 30, right: -16, animation: "adfloat2 5.5s ease-in-out infinite" } },
+            { dot: T.success, text: "Your team decides", style: { bottom: 26, left: -16, animation: "adfloat 6s ease-in-out infinite" } },
+          ]}
+        >
           <LiveAICommand />
-        </BrowserFrame>
+        </AppFrame>
       </div>
     </section>
   );

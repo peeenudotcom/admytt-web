@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import { PageHero, Band, SectionHeading, CtaBand } from "@/components/ui";
-import AICommandCentre from "@/components/home/AICommandCentre";
+import { AppFrame } from "@/components/product/AppFrame";
+import LiveAICommand from "@/components/product/LiveAICommand";
+import { T } from "@/lib/theme";
 
 export const metadata: Metadata = {
   title: "AI Command Centre",
@@ -43,7 +45,19 @@ export default function AiPage() {
       </Band>
 
       {/* The same live "Operational briefing" demo used on the homepage. */}
-      <AICommandCentre />
+      <Band bg="#F8FAFC">
+        <div style={{ maxWidth: 880, margin: "0 auto" }}>
+          <AppFrame
+            url="app.admytt.com/ai"
+            chips={[
+              { dot: T.violet, text: "Draft ready · review", style: { top: 28, right: -16, animation: "adfloat2 5.5s ease-in-out infinite" } },
+              { dot: T.success, text: "Your team decides", style: { bottom: 24, left: -16, animation: "adfloat 6s ease-in-out infinite" } },
+            ]}
+          >
+            <LiveAICommand />
+          </AppFrame>
+        </div>
+      </Band>
 
       <Band bg="#fff">
         <div style={{ display: "flex", alignItems: "center", gap: 12, background: "#EEF2FF", border: "1px solid #D8DCFB", borderRadius: 12, padding: "20px 24px", maxWidth: 760 }}>

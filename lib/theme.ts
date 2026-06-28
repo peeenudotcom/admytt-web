@@ -32,9 +32,29 @@ export const T = {
   // dark AI panel gradient
   aiFrom: "#1E1B4B",
   aiTo: "#312E81",
+  // warm "real app" surface (anyimmi-style product frames)
+  cream: "#F7F4EE",
+  creamBar: "#EFEBE2",
+  creamBorder: "#E7E2D6",
+  ink: "#1C1917",
+  inkMuted: "#6B6357",
+  canvas: "#0A0A0F",
 } as const;
 
 export const F = "var(--font-inter), system-ui, sans-serif";
+export const MONO = "ui-monospace, SFMono-Regular, Menlo, monospace";
+
+/** Warm, monospace status badge for the cream product frames. */
+export function warmBadge(tone: "warn" | "info" | "good" | "bad" | "violet"): React.CSSProperties {
+  const m = {
+    warn: { background: "#FBF1DE", color: "#9A6700" },
+    info: { background: "#E8EBFF", color: "#4F46E5" },
+    good: { background: "#E4F7EC", color: "#0F7B43" },
+    bad: { background: "#FBE7E4", color: "#B42318" },
+    violet: { background: "#F0EBFB", color: "#7C3AED" },
+  }[tone];
+  return { font: `600 9px ${MONO}`, letterSpacing: ".04em", borderRadius: 5, padding: "3px 8px", whiteSpace: "nowrap", ...m };
+}
 
 /** Primary CTA gradient (indigo → blue), matching the product's btn-primary. */
 export const ctaGradient = `linear-gradient(135deg,${T.primary},${T.blue})`;
