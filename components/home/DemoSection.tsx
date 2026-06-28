@@ -8,8 +8,10 @@ const steps = [
 
 export default function DemoSection() {
   return (
-    <section id="demo" style={{ background: "linear-gradient(135deg,#4F46E5 0%,#0F172A 100%)", padding: "92px 0", position: "relative", overflow: "hidden" }}>
-      <div style={{ position: "absolute", bottom: -100, left: -60, width: 340, height: 340, borderRadius: "50%", background: "radial-gradient(circle,#4F46E5 0%,transparent 70%)", opacity: 0.4 }} />
+    <section id="demo" style={{ background: "#0A0A0F", padding: "92px 0", position: "relative", overflow: "hidden" }}>
+      {/* same dark grid + violet glow as the hero, so the page bookends */}
+      <div aria-hidden style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px)", backgroundSize: "44px 44px", maskImage: "radial-gradient(120% 90% at 50% 100%, #000 35%, transparent 80%)", WebkitMaskImage: "radial-gradient(120% 90% at 50% 100%, #000 35%, transparent 80%)" }} />
+      <div aria-hidden style={{ position: "absolute", bottom: -180, left: "50%", transform: "translateX(-50%)", width: 1000, height: 520, background: "radial-gradient(closest-side, rgba(124,58,237,.28), rgba(79,70,229,.14), transparent)", pointerEvents: "none" }} />
       <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 28px", position: "relative", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "start" }} data-demoform="1">
         <div style={{ paddingTop: 8 }}>
           <h2 data-h2 style={{ font: "800 40px/47px var(--font-inter)", letterSpacing: "-.02em", color: "#fff", marginBottom: 18 }}>See how adMYTT fits the way your consultancy works.</h2>
