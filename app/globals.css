@@ -142,6 +142,20 @@ a { color: inherit; }
   [data-modrow], [data-aigrid] { grid-template-columns: 1fr !important; }
   [data-modrow] .modrow-copy, [data-modrow] .modrow-frame { order: 0 !important; }
 }
+/* ---- Product Atlas ---- */
+[data-atlas-explorer] { display: grid; grid-template-columns: 214px minmax(0,1fr) 312px; gap: 22px; align-items: start; }
+[data-atlas-rail] { display: flex; flex-direction: column; gap: 4px; position: sticky; top: 84px; }
+[data-atlas-role], [data-atlas-record] { display: grid; grid-template-columns: minmax(0,1fr) 320px; gap: 22px; align-items: start; }
+[data-atlas-route] { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; align-items: stretch; }
+[data-atlas-map] { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 1024px) {
+  [data-atlas-explorer], [data-atlas-role], [data-atlas-record] { grid-template-columns: 1fr !important; }
+  [data-atlas-rail] { position: static; flex-direction: row; overflow-x: auto; gap: 8px; padding-bottom: 8px; scrollbar-width: thin; }
+  [data-atlas-rail] > * { flex-shrink: 0; width: auto !important; }
+  [data-atlas-route] { grid-template-columns: 1fr !important; }
+  [data-atlas-map] { grid-template-columns: 1fr !important; }
+  .ai-route-arrow { right: 50% !important; top: auto !important; bottom: -7px !important; transform: translateX(50%) rotate(90deg) !important; }
+}
 @media (max-width: 640px) {
   [data-trust] { grid-template-columns: repeat(2, 1fr) !important; }
   [data-platform], [data-integ], [data-mig], [data-foot] { grid-template-columns: 1fr !important; }

@@ -24,6 +24,7 @@ export function ProductMock({
   metrics = [],
   rows,
   note,
+  aiNote,
   minHeight = 340,
 }: {
   title: string;
@@ -33,6 +34,7 @@ export function ProductMock({
   metrics?: MockMetric[];
   rows: MockRow[];
   note?: string;
+  aiNote?: string;
   minHeight?: number;
 }) {
   return (
@@ -88,6 +90,12 @@ export function ProductMock({
         ))}
       </div>
 
+      {aiNote && (
+        <div style={{ display: "flex", alignItems: "flex-start", gap: 9, marginTop: 12, background: T.violetBg, border: `1px solid ${T.violetBorder}`, borderRadius: 10, padding: "10px 12px" }}>
+          <span style={{ font: `700 9px ${MONO}`, letterSpacing: ".06em", color: T.violet, background: "#fff", borderRadius: 5, padding: "3px 6px", marginTop: 1, flexShrink: 0 }}>AI</span>
+          <span style={{ font: `500 11.5px/17px ${F}`, color: "#5b3da8" }}>{aiNote}</span>
+        </div>
+      )}
       {note && <div style={{ font: `400 11px ${F}`, color: T.subtle, marginTop: 10 }}>{note}</div>}
     </div>
   );
