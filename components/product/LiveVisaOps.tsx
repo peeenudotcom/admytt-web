@@ -31,8 +31,8 @@ function Check_({ label, done }: { label: string; done: boolean }) {
 const studyChecks: [string, boolean][] = [["CAS from Leeds", true], ["Financial documents", true], ["TB test", true], ["Biometrics", true], ["Online application", false], ["Submit to UKVI", false]];
 const visitorChecks: [string, boolean][] = [["Invitation letter", true], ["Financial documents", true], ["Travel insurance", false], ["Cover letter", true], ["Appointment booked", true], ["Submit application", false]];
 
-export default function LiveVisaOps() {
-  const [tab, setTab] = useState<"study" | "visitor">("visitor");
+export default function LiveVisaOps({ defaultTab = "visitor" }: { defaultTab?: "study" | "visitor" } = {}) {
+  const [tab, setTab] = useState<"study" | "visitor">(defaultTab);
 
   const seg = (on: boolean): React.CSSProperties => ({ font: `700 12.5px ${F}`, border: "none", borderRadius: 8, padding: "8px 18px", cursor: "pointer", background: on ? "#fff" : "transparent", color: on ? T.text : T.muted, boxShadow: on ? "0 1px 3px rgba(15,23,42,.12)" : "none", display: "inline-flex", alignItems: "center", gap: 7 });
 

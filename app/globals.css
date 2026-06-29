@@ -136,10 +136,17 @@ a { color: inherit; }
   }
   [data-mig] { grid-template-columns: repeat(2, 1fr) !important; }
   [data-foot] { grid-template-columns: 1fr 1fr !important; }
+  /* product page */
+  [data-record] { grid-template-columns: repeat(2, 1fr) !important; }
+  [data-record] .record-connector { display: none !important; }
+  [data-modrow], [data-aigrid] { grid-template-columns: 1fr !important; }
+  [data-modrow] .modrow-copy, [data-modrow] .modrow-frame { order: 0 !important; }
 }
 @media (max-width: 640px) {
   [data-trust] { grid-template-columns: repeat(2, 1fr) !important; }
   [data-platform], [data-integ], [data-mig], [data-foot] { grid-template-columns: 1fr !important; }
+  [data-record] { grid-template-columns: 1fr !important; }
+  [data-aicaps], [data-caps] { grid-template-columns: 1fr !important; }
   [data-footbot] { flex-direction: column; align-items: flex-start; }
   [data-hsb] { display: none !important; }
   h1[data-h1] { font-size: 36px !important; line-height: 42px !important; }
