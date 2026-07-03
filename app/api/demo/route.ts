@@ -101,31 +101,51 @@ export async function POST(req: Request) {
   }
   recentByEmail.set(email, now);
 
-  // TODO(integration): create a lead in the correct CRM workspace, notify the
-  // sales team, and send a confirmation email (Resend) after verified delivery.
-  // Never log message contents or PII beyond what is operationally required.
+  // Deliver the lead. This is the whole point of the endpoint, so it must never
+  // report success unless the lead was actually handed to a durable sink.
   const webhook = process.env.DEMO_WEBHOOK_URL;
-  if (webhook) {
-    try {
-      await fetch(webhook, {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          name: body.name,
-          company: body.company,
-          email,
-          phone: body.phone,
-          team: body.team,
-          branches: body.branches ?? "",
-          system: body.system ?? "",
-          message: body.message ?? "",
-          utm: body.utm ?? {},
-          receivedAt: new Date(now).toISOString(),
-        }),
+
+  if (!webhook) {
+    // No delivery target configured. In production that is a misconfiguration —
+    // fail loudly rather than silently dropping the lead and showing "success".
+    // In development, allow the UI flow to be exercised without a backend.
+    if (process.env.NODE_ENV === "production") {
+      console.error("[demo] DEMO_WEBHOOK_URL is not configured; cannot deliver lead", {
+        company: body.company,
+        email,
+        receivedAt: new Date(now).toISOString(),
       });
-    } catch {
       return NextResponse.json({ ok: false, code: "server_error" }, { status: 500 });
     }
+    console.warn("[demo] no DEMO_WEBHOOK_URL (dev): lead not delivered", { email });
+    return NextResponse.json({ ok: true }, { status: 200 });
+  }
+
+  try {
+    const res = await fetch(webhook, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        name: body.name,
+        company: body.company,
+        email,
+        phone: body.phone,
+        team: body.team,
+        branches: body.branches ?? "",
+        system: body.system ?? "",
+        message: body.message ?? "",
+        utm: body.utm ?? {},
+        receivedAt: new Date(now).toISOString(),
+      }),
+    });
+    // A non-2xx from the sink means the lead was NOT captured — treat as failure.
+    if (!res.ok) {
+      console.error("[demo] webhook delivery failed", { status: res.status, company: body.company, email });
+      return NextResponse.json({ ok: false, code: "server_error" }, { status: 500 });
+    }
+  } catch (err) {
+    console.error("[demo] webhook delivery threw", { error: err instanceof Error ? err.message : String(err), email });
+    return NextResponse.json({ ok: false, code: "server_error" }, { status: 500 });
   }
 
   return NextResponse.json({ ok: true }, { status: 200 });

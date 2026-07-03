@@ -129,7 +129,7 @@ export default function DemoForm() {
           <div style={{ width: 58, height: 58, margin: "0 auto 18px", borderRadius: "50%", background: "#E6F6EF", display: "flex", alignItems: "center", justifyContent: "center", font: "700 27px var(--font-inter)", color: "#0F9F6E" }}>✓</div>
           <div style={{ font: "800 23px var(--font-inter)", color: "#0F172A", marginBottom: 9 }}>Request received</div>
           <p style={{ font: "400 15px/23px var(--font-inter)", color: "#475569", maxWidth: 340, margin: "0 auto 22px" }}>
-            Thanks — a product specialist will reply within one business day to schedule your demo. A confirmation is on its way to your work email.
+            Thanks — a product specialist will reply within one business day to schedule your demo.
           </p>
           <button
             type="button"

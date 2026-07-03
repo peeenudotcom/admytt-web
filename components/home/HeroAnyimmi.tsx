@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Sparkles, ArrowRight, Play, ShieldCheck } from "lucide-react";
 import { T, F, ctaGradient, ctaShadow } from "@/lib/theme";
-import { site } from "@/lib/site";
 import LiveRealDashboard from "@/components/product/LiveRealDashboard";
 
 /* Dark, dramatic hero canvas with the REAL adMYTT dashboard (white) floating
@@ -34,15 +33,15 @@ export default function HeroAnyimmi() {
           adMYTT brings leads, counselling, applications, documents, follow-ups and team performance into one secure platform built specifically for education consultancies.
         </p>
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: 16 }}>
-          <a href={site.appUrl} style={{ display: "inline-flex", alignItems: "center", gap: 8, font: `700 15.5px ${F}`, color: "#fff", textDecoration: "none", background: ctaGradient, padding: "14px 26px", borderRadius: 11, boxShadow: ctaShadow }}>
-            Start Free for 14 Days <ArrowRight size={17} />
-          </a>
+          <Link href="/book-a-demo" style={{ display: "inline-flex", alignItems: "center", gap: 8, font: `700 15.5px ${F}`, color: "#fff", textDecoration: "none", background: ctaGradient, padding: "14px 26px", borderRadius: 11, boxShadow: ctaShadow }}>
+            Book a demo <ArrowRight size={17} />
+          </Link>
           <Link href="/product" style={{ display: "inline-flex", alignItems: "center", gap: 9, font: `700 15.5px ${F}`, color: "#fff", textDecoration: "none", background: "rgba(255,255,255,.06)", border: "1px solid rgba(255,255,255,.18)", padding: "14px 24px", borderRadius: 11 }}>
-            <Play size={15} /> Watch Product Tour
+            <Play size={15} /> Explore the product
           </Link>
         </div>
         <div style={{ display: "flex", gap: 20, justifyContent: "center", flexWrap: "wrap", font: `500 13px ${F}`, color: "#8E8AA0" }}>
-          {["No credit card required", "Guided data migration", "Setup support included"].map((t) => (
+          {["No obligation", "Guided data migration", "Setup support included"].map((t) => (
             <span key={t} style={{ display: "flex", alignItems: "center", gap: 7 }}>
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: T.green }} /> {t}
             </span>

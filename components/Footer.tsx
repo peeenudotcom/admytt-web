@@ -5,9 +5,9 @@ const col = (title: string, links: { label: string; href: string }[]) => ({ titl
 
 const columns = [
   col("Product", [
-    { label: "Lead management", href: "/product#leads" },
-    { label: "Admissions", href: "/product#admissions" },
-    { label: "Documents & visa", href: "/product#visa" },
+    { label: "Lead management", href: "/product#workflow-explorer" },
+    { label: "Admissions", href: "/product#workflow-explorer" },
+    { label: "Documents & visa", href: "/product#workflow-explorer" },
     { label: "AI Command Centre", href: "/ai" },
   ]),
   col("Company", [

@@ -85,7 +85,7 @@ export default function HomePage() {
           title={<>Turn every enquiry into an <span className="hl">owned next step</span>.</>}
           body="Lead management is the entry point to the whole CRM. Capture from every channel, score intent, filter by country, source, stage, owner and intake, and move enquiries forward with bulk assignment and export — nothing sits unowned."
           points={["AI scoring & saved views", "Owner, stage & next follow-up on every lead", "Bulk assign & export"]}
-          cta={{ label: "Explore lead management", href: "/product#leads" }}
+          cta={{ label: "Explore lead management", href: "/product#workflow-explorer" }}
           frameUrl="app.admytt.com/leads"
           chips={[
             { dot: T.primary, text: "Auto-assigned by branch rule", style: { top: 30, left: -8, animation: "adfloat 5s ease-in-out infinite" } },
@@ -102,7 +102,7 @@ export default function HomePage() {
           title={<>Know exactly what&apos;s <span className="hl">missing</span> on every file.</>}
           body="A readiness checklist per application shows what's verified, in review, missing, or rejected — so nothing blocks an offer or a visa filing. Applications, intakes and deadlines stay attached to the same record."
           points={["Per-application readiness checklist", "Versioned uploads with review status", "Private, workspace-scoped storage"]}
-          cta={{ label: "Explore documents", href: "/product#documents" }}
+          cta={{ label: "Explore documents", href: "/product#workflow-explorer" }}
           frameUrl="app.admytt.com/documents"
           chips={[
             { dot: T.success, text: "SoP verified", style: { top: 26, right: -14, animation: "adfloat2 5.5s ease-in-out infinite" } },
@@ -120,7 +120,7 @@ export default function HomePage() {
           title={<>Run <span className="hl">visitor visa</span> cases without scattered checklists.</>}
           body="Study visa and visitor visa are separate, first-class workflows. Track applicants and accompanying travellers, sponsor or host details, country-specific checklists, appointments, payments, ownership and the final outcome — all in one place."
           points={["Study Visa & Visitor Visa, side by side", "Country checklists, appointments & payments", "Owner, next action & recorded outcome"]}
-          cta={{ label: "Explore visa operations", href: "/product#visa" }}
+          cta={{ label: "Explore visa operations", href: "/product#workflow-explorer" }}
           frameUrl="app.admytt.com/visas"
           chips={[
             { dot: T.violet, text: "Filed · awaiting decision", style: { top: 30, right: -10, animation: "adfloat2 6s ease-in-out infinite" } },
