@@ -1,10 +1,14 @@
-/** Banner flagging that legal copy is a starter template pending owner/legal review. */
+/**
+ * Public "starter template — not reviewed" banner, suppressed for launch so the
+ * legal pages read professionally.
+ *
+ * IMPORTANT: hiding the banner does NOT make the policies reviewed. The privacy,
+ * terms, and data-processing copy is still template text and must be reviewed and
+ * approved by the business owner or a legal adviser. Re-enable by returning the
+ * banner below if you want the disclaimer visible again.
+ */
 export default function LegalNotice() {
-  return (
-    <div style={{ background: "#FCEFDD", border: "1px solid #F0D6AE", borderRadius: 8, padding: "12px 14px", marginBottom: 28, font: "500 13px/19px var(--font-inter)", color: "#92590B" }}>
-      This is a starter template. Final privacy, terms, and data-processing copy must be reviewed and approved by the business owner or a legal adviser before launch.
-    </div>
-  );
+  return null;
 }
 
 export function LegalSection({ heading, children }: { heading: string; children: React.ReactNode }) {

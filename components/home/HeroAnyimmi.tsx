@@ -53,7 +53,7 @@ export default function HeroAnyimmi() {
               <span key={c} style={{ width: 18, height: 18, borderRadius: "50%", background: c, border: "2px solid #0A0A0F", marginLeft: i ? -6 : 0 }} />
             ))}
           </span>
-          Trusted by consultancy teams managing thousands of student applications.
+          Built for consultancy teams running enquiry-to-visa on one connected record.
         </div>
       </div>
 

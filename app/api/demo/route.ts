@@ -59,7 +59,7 @@ export async function POST(req: Request) {
   try {
     body = (await req.json()) as Payload;
   } catch {
-    return NextResponse.json({ ok: false, code: "server_error" }, { status: 500 });
+    return NextResponse.json({ ok: false, code: "bad_request" }, { status: 400 });
   }
 
   // Honeypot: real users never fill this hidden field.
@@ -87,13 +87,15 @@ export async function POST(req: Request) {
 
   const email = body.email!.trim().toLowerCase();
 
-  // Duplicate detection. The `+dupe@` / `+fail@` patterns let reviewers exercise
-  // the duplicate and server-error paths deterministically before a backend exists.
-  if (/\+dupe@|duplicate@/.test(email)) {
-    return NextResponse.json({ ok: false, code: "duplicate" }, { status: 409 });
-  }
-  if (/\+fail@|error@/.test(email)) {
-    return NextResponse.json({ ok: false, code: "server_error" }, { status: 500 });
+  // Deterministic test hooks for the duplicate / error paths — non-production
+  // only, so a real user with an "error@" address can't trigger a fake 500.
+  if (process.env.NODE_ENV !== "production") {
+    if (/\+dupe@|duplicate@/.test(email)) {
+      return NextResponse.json({ ok: false, code: "duplicate" }, { status: 409 });
+    }
+    if (/\+fail@|error@/.test(email)) {
+      return NextResponse.json({ ok: false, code: "server_error" }, { status: 500 });
+    }
   }
   const last = recentByEmail.get(email);
   if (last && now - last < DUPLICATE_WINDOW_MS) {
