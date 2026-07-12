@@ -16,6 +16,7 @@ export default function Header({ overHero = false }: { overHero?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
 
   // When the header overlays a dark hero, stay transparent at the top and turn
   // solid once the user scrolls past it.
@@ -40,13 +41,37 @@ export default function Header({ overHero = false }: { overHero?: boolean }) {
     }
   }, [menuOpen]);
 
-  // Close on Escape.
+  // Close on Escape + trap focus inside the open menu (WCAG 2.4.3 / 2.1.2).
   useEffect(() => {
     if (!menuOpen) return;
+    const getFocusable = () =>
+      panelRef.current
+        ? Array.from(
+            panelRef.current.querySelectorAll<HTMLElement>(
+              'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])'
+            )
+          )
+        : [];
+    // Move focus into the panel when it opens.
+    getFocusable()[0]?.focus();
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setMenuOpen(false);
         triggerRef.current?.focus();
+        return;
+      }
+      if (e.key === "Tab") {
+        const items = getFocusable();
+        if (items.length === 0) return;
+        const first = items[0];
+        const last = items[items.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
       }
     };
     window.addEventListener("keydown", onKey);
@@ -131,6 +156,7 @@ export default function Header({ overHero = false }: { overHero?: boolean }) {
       {menuOpen && (
         <div role="dialog" aria-modal="true" aria-label="Menu" style={{ position: "fixed", inset: 0, zIndex: 70, background: "rgba(11,18,48,.4)" }} onClick={closeMenu}>
           <div
+            ref={panelRef}
             onClick={(e) => e.stopPropagation()}
             style={{
               position: "absolute",

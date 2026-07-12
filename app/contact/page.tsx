@@ -42,7 +42,7 @@ export default function ContactPage() {
             </div>
           ))}
         </div>
-        <div style={{ marginTop: 22, font: "500 13.5px/21px var(--font-inter)", color: "#94a3b8", maxWidth: 680 }}>
+        <div style={{ marginTop: 22, font: "500 13.5px/21px var(--font-inter)", color: "#64748B", maxWidth: 680 }}>
           Registered company details, address, and support hours are confirmed during onboarding. We don&apos;t publish unverified contact claims.
         </div>
       </Band>

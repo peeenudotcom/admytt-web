@@ -60,7 +60,7 @@ export default function SecurityPage() {
             </div>
           ))}
         </div>
-        <div style={{ marginTop: 22, maxWidth: 880, font: "500 13.5px/21px var(--font-inter)", color: "#94a3b8" }}>
+        <div style={{ marginTop: 22, maxWidth: 880, font: "500 13.5px/21px var(--font-inter)", color: "#64748B" }}>
           We deliberately avoid phrases like “bank-level security” and “enterprise-grade” without defined controls. If you need specific documentation for a procurement review, ask during your demo.
         </div>
       </Band>

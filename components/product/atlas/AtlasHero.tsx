@@ -78,8 +78,10 @@ export default function AtlasHero() {
                 aria-selected={idx === i}
                 aria-label={w.label}
                 onClick={() => setI(idx)}
-                style={{ width: idx === i ? 22 : 9, height: 9, borderRadius: 999, border: "none", cursor: "pointer", background: idx === i ? T.primary : "#CBD5E1", transition: "width .2s, background .2s" }}
-              />
+                style={{ width: 24, height: 24, padding: 0, border: "none", background: "transparent", cursor: "pointer", display: "inline-flex", alignItems: "center", justifyContent: "center" }}
+              >
+                <span aria-hidden style={{ display: "block", width: idx === i ? 22 : 9, height: 9, borderRadius: 999, background: idx === i ? T.primary : "#CBD5E1", transition: "width .2s, background .2s" }} />
+              </button>
             ))}
           </div>
         </div>

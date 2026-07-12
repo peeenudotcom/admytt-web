@@ -215,7 +215,7 @@ export default function DemoForm() {
             </div>
             <div>
               <label htmlFor="df-message" style={labelStyle}>
-                Anything specific you want to see? <span style={{ color: "#94a3b8", fontWeight: 400 }}>(optional)</span>
+                Anything specific you want to see? <span style={{ color: "#64748B", fontWeight: 400 }}>(optional)</span>
               </label>
               <textarea id="df-message" rows={3} value={f.message} onChange={(e) => set("message", e.target.value)} placeholder="e.g. visa workflow for the UK, partner commissions…" style={{ ...baseInput, resize: "vertical", minHeight: 74 }} />
             </div>
@@ -257,7 +257,7 @@ export default function DemoForm() {
             >
               {submitting ? "Submitting…" : "Book a demo"}
             </button>
-            <div style={{ font: "400 12px/18px var(--font-inter)", color: "#94a3b8", textAlign: "center" }}>
+            <div style={{ font: "400 12px/18px var(--font-inter)", color: "#64748B", textAlign: "center" }}>
               We reply within one business day. Your details are used only to schedule your demo.
             </div>
           </div>

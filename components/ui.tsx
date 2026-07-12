@@ -106,7 +106,7 @@ export function LegalLayout({ title, updated, children }: { title: string; updat
     <section style={{ background: "#fff", padding: "64px 0 80px" }}>
       <div style={{ maxWidth: 760, margin: "0 auto", padding: "0 28px" }}>
         <h1 data-h1 style={{ font: "800 40px/48px var(--font-inter)", letterSpacing: "-.02em", color: "#0F172A", marginBottom: 8 }}>{title}</h1>
-        <div style={{ font: "500 13.5px var(--font-inter)", color: "#94a3b8", marginBottom: 32 }}>Last updated {updated}</div>
+        <div style={{ font: "500 13.5px var(--font-inter)", color: "#64748B", marginBottom: 32 }}>Last updated {updated}</div>
         <div style={{ font: "400 16px/26px var(--font-inter)", color: "#334155" }}>{children}</div>
       </div>
     </section>

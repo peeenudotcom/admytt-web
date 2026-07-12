@@ -10,7 +10,7 @@ export const T = {
   borderSubtle: "#F1F5F9",
   text: "#0F172A",
   muted: "#475569",
-  subtle: "#94A3B8",
+  subtle: "#64748B",
   primary: "#4F46E5",
   primary500: "#6366F1",
   primary700: "#4338CA",

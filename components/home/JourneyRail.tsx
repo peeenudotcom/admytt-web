@@ -41,7 +41,7 @@ export default function JourneyRail() {
                 }}
                 style={{ display: "flex", alignItems: "center", gap: 9, background: on ? "#0F172A" : "#fff", border: `1px solid ${on ? "#0F172A" : "#E4EAF3"}`, color: on ? "#fff" : "#475569", borderRadius: 10, padding: "10px 14px", marginRight: 8, cursor: "pointer", flexShrink: 0, transition: "all .18s" }}
               >
-                <span style={{ width: 22, height: 22, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", font: "700 11px var(--font-inter)", background: on ? "#4F46E5" : "#EEF2F8", color: on ? "#fff" : "#94a3b8" }}>{i + 1}</span>
+                <span style={{ width: 22, height: 22, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", font: "700 11px var(--font-inter)", background: on ? "#4F46E5" : "#EEF2F8", color: on ? "#fff" : "#64748B" }}>{i + 1}</span>
                 <span style={{ font: "700 13px var(--font-inter)", whiteSpace: "nowrap" }}>{st.label}</span>
               </button>
             );
@@ -85,7 +85,7 @@ export default function JourneyRail() {
               <span style={{ width: 32, height: 32, borderRadius: "50%", background: "#EEF2FF", color: "#4F46E5", font: "700 12px var(--font-inter)", display: "flex", alignItems: "center", justifyContent: "center" }}>PS</span>
               <div>
                 <div style={{ font: "700 13px var(--font-inter)", color: "#0F172A" }}>Priya Sharma</div>
-                <div style={{ font: "500 11px var(--font-inter)", color: "#94a3b8" }}>UK · Fall 2026 · #STU-2041</div>
+                <div style={{ font: "500 11px var(--font-inter)", color: "#64748B" }}>UK · Fall 2026 · #STU-2041</div>
               </div>
               <span style={{ marginLeft: "auto", font: "700 11px var(--font-inter)", color: "#475569", background: "#F1F5FB", borderRadius: 7, padding: "5px 11px" }}>{a.head}</span>
             </div>

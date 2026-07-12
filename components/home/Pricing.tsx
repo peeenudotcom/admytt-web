@@ -42,7 +42,7 @@ export default function Pricing({ withHeading = true }: { withHeading?: boolean 
             const f = p.featured;
             const talk = p.m === "Talk to sales";
             const price = talk ? "Talk to sales" : annual ? p.a : p.m;
-            const subColor = f ? "#aab4d6" : "#94a3b8";
+            const subColor = f ? "#aab4d6" : "#64748B";
             return (
               <div key={p.name} style={{ position: "relative", borderRadius: 14, padding: 30, ...(f ? { background: "#0F172A", border: "1px solid #0F172A", boxShadow: "0 30px 60px -30px rgba(11,18,48,.5)" } : { background: "#fff", border: "1px solid #E9EEF6" }) }}>
                 {f && <div style={{ position: "absolute", top: -11, left: 24, background: "#B91C1C", color: "#fff", font: "700 11px var(--font-inter)", borderRadius: 999, padding: "4px 12px" }}>Most popular</div>}
@@ -73,7 +73,7 @@ export default function Pricing({ withHeading = true }: { withHeading?: boolean 
             );
           })}
         </div>
-        <div style={{ textAlign: "center", font: "500 13px var(--font-inter)", color: "#94a3b8", marginTop: 24 }}>
+        <div style={{ textAlign: "center", font: "500 13px var(--font-inter)", color: "#64748B", marginTop: 24 }}>
           Prices shown exclusive of applicable taxes. Annual billing is committed for 12 months. Cancel anytime; your data stays exportable.
         </div>
       </div>
