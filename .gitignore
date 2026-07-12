@@ -26,3 +26,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# internal design/build artifacts (kept in a private docs repo)
+/project
+/chats
