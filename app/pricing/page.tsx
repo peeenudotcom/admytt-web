@@ -3,6 +3,22 @@ import PageShell from "@/components/PageShell";
 import { PageHero, Band, SectionHeading, CtaBand } from "@/components/ui";
 import Pricing from "@/components/home/Pricing";
 
+// Pricing structured data — scoped to this page (not the whole site).
+const pricingJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "adMYTT",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "INR",
+    lowPrice: "2399",
+    highPrice: "6999",
+    offerCount: "3",
+  },
+};
+
 export const metadata: Metadata = {
   title: "Pricing",
   description:
@@ -63,6 +79,7 @@ export default function PricingPage() {
       </Band>
 
       <CtaBand />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingJsonLd) }} />
     </PageShell>
   );
 }

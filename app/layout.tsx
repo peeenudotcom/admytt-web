@@ -5,7 +5,7 @@ import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700", "800"], // only weights actually used
   variable: "--font-inter",
   display: "swap",
 });
@@ -52,6 +52,8 @@ const orgJsonLd = {
   description: site.description,
 };
 
+// Pricing (AggregateOffer) markup lives on /pricing only — it shouldn't appear
+// site-wide (e.g. on legal pages).
 const softwareJsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -59,13 +61,6 @@ const softwareJsonLd = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: site.description,
-  offers: {
-    "@type": "AggregateOffer",
-    priceCurrency: "INR",
-    lowPrice: "2399",
-    highPrice: "6999",
-    offerCount: "3",
-  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

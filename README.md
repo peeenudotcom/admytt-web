@@ -23,3 +23,12 @@ The design medium is **HTML/CSS/JS** — these are prototypes, not production co
 - `README.md` — this file
 - `chats/` — conversation transcripts (read these!)
 - `project/` — the `Website design for admytt.com` project files (HTML prototypes, assets, components)
+
+## Environment variables
+
+See `.env.example`. The only production-required variable is:
+
+- **`DEMO_WEBHOOK_URL`** — destination that receives demo-request submissions
+  (JSON POST). Set it in your host (Vercel → Settings → Environment Variables).
+  Without it, `/api/demo` returns an error in production instead of dropping the
+  lead silently. A Zapier/Make "Catch Hook" URL is the quickest option.
