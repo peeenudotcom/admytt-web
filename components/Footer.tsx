@@ -62,7 +62,6 @@ export default function Footer() {
             <Link href="/privacy" style={{ ...linkStyle, color: "#6b779c" }}>Privacy</Link>
             <Link href="/terms" style={{ ...linkStyle, color: "#6b779c" }}>Terms</Link>
             <Link href="/data-processing" style={{ ...linkStyle, color: "#6b779c" }}>Data processing</Link>
-            <a href="https://status.admytt.com" style={{ ...linkStyle, color: "#6b779c" }}>Status</a>
           </div>
         </div>
       </div>

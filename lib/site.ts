@@ -6,7 +6,7 @@ export const site = {
   demoEmail: "demo@admytt.com",
   description:
     "Run your education consultancy from first enquiry to visa outcome. adMYTT is a secure, multi-tenant CRM that brings leads, counselling, applications, documents, payments, visas, partners, and team operations into one workspace.",
-  ogImage: "/og.png",
+  // Social image is generated at request time by app/opengraph-image.tsx.
 } as const;
 
 /** Primary navigation — single dominant CTA (Book a demo), per the brief. */
